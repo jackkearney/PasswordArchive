@@ -1,0 +1,13 @@
+.after-table {
+     text-align: justify;
+    float: bottom;
+ }
+.entry {
+    align: left;
+    margin: 5px;
+    padding: 1px;
+}
+input {
+    padding: 5px;
+    margin: 5px;
+}

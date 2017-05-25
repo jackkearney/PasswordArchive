@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<style>
+    table, th , td  {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+    table tr:nth-child(odd) {
+        background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+</style>
+<head>
+    <script src='../assets/angular.js'></script>
+
+</head>
+<body>
+
+<div data-ng-app="myApp" data-ng-controller="registerCtrl">
+    <table>
+        <tr data-ng-repeat="entry in passList">
+            <td data-ng-bind="entry.pass"></td>
+            <td>{{ entry.pass }}</td>
+            <td> <button data-ng-click="editable(entry.name)"> edit </button>  </td>
+        </tr>
+    </table>
+    <button data-ng-click="logout()"> log out </button>
+</div>
+
+<form ng-show="showForm">
+    <h3 >Edit User:</h3>
+    <br>
+    <label>Account:</label>
+    <input   ng-model="editName">
+    <br>
+    <label>Password:</label>
+    <input   ng-model="editPass">
+    <br>
+    <button  ng-enabled="editName.length < 0 && editPass.length < 100 && editPass.length > 0 && editName.length < 100 ">&#10004; Save Changes</button>
+</form>
+
+</body>
+</html>

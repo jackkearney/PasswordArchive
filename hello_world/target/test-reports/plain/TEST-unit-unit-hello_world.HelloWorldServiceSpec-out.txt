@@ -1,0 +1,22 @@
+--Output from test registerAccount null username--
+--Output from test registerAccount null password--
+--Output from test registerAccount user already registered--
+--Output from test registerAccount user not yet registered--
+--Output from test tryLogIn null username--
+--Output from test tryLogIn null password--
+--Output from test tryLogIn user already registered--
+--Output from test tryLogIn user not yet registered--
+--Output from test addPasswordEntry null username--
+--Output from test addPasswordEntry null password--
+--Output from test addPasswordEntry null accountName--
+--Output from test addPasswordEntry duplicate accountName--
+--Output from test addPasswordEntry user not yet registered--
+--Output from test addPasswordEntry add new password valid--
+--Output from test editPasswordEntry null id--
+--Output from test editPasswordEntry null accountName--
+--Output from test editPasswordEntry null password (aka only change accountName)--
+--Output from test editPasswordEntry all valid--
+--Output from test editPasswordEntry invalid id--
+--Output from test removePasswordEntry invalid id--
+--Output from test removePasswordEntry valid id--
+--Output from test removePasswordEntry try to remove twice--

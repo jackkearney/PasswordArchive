@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="USD1600636" name="hello_world.HelloControllerSpec" tests="19" time="2.58" timestamp="2017-05-24T17:48:50">
+  <properties />
+  <testcase classname="hello_world.HelloControllerSpec" name="test try log in success" time="1.564" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test try log in failure" time="0.045" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test try register success" time="0.039" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test try register failure" time="0.03" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test checkLoggedIn success" time="0.028" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test checkLoggedIn failure" time="0.022" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test getData loggedIn empytData" time="0.417" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test getData logged in has data" time="0.045" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test getData logged out" time="0.028" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test tryRegister failure" time="0.025" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test tryRegister success" time="0.052" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test logout already logged in" time="0.029" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test logout not logged in" time="0.025" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test addPassword success" time="0.042" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test addPassword failure" time="0.037" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test editPassword success" time="0.041" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test editPassword failure" time="0.027" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test removePassword success" time="0.038" />
+  <testcase classname="hello_world.HelloControllerSpec" name="test removePassword failure" time="0.031" />
+  <system-out><![CDATA[--Output from test try log in success--
+--Output from test try log in failure--
+--Output from test try register success--
+--Output from test try register failure--
+--Output from test checkLoggedIn success--
+--Output from test checkLoggedIn failure--
+--Output from test getData loggedIn empytData--
+--Output from test getData logged in has data--
+--Output from test getData logged out--
+--Output from test tryRegister failure--
+--Output from test tryRegister success--
+--Output from test logout already logged in--
+--Output from test logout not logged in--
+--Output from test addPassword success--
+--Output from test addPassword failure--
+--Output from test editPassword success--
+--Output from test editPassword failure--
+--Output from test removePassword success--
+--Output from test removePassword failure--
+]]></system-out>
+  <system-err><![CDATA[--Output from test try log in success--
+--Output from test try log in failure--
+--Output from test try register success--
+--Output from test try register failure--
+--Output from test checkLoggedIn success--
+--Output from test checkLoggedIn failure--
+--Output from test getData loggedIn empytData--
+--Output from test getData logged in has data--
+--Output from test getData logged out--
+--Output from test tryRegister failure--
+--Output from test tryRegister success--
+--Output from test logout already logged in--
+--Output from test logout not logged in--
+--Output from test addPassword success--
+--Output from test addPassword failure--
+--Output from test editPassword success--
+--Output from test editPassword failure--
+--Output from test removePassword success--
+--Output from test removePassword failure--
+]]></system-err>
+</testsuite>

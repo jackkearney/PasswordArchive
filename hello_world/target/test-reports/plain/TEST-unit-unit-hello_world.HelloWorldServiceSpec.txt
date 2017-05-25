@@ -1,0 +1,73 @@
+Testsuite: hello_world.HelloWorldServiceSpec
+Tests run: 22, Failures: 0, Errors: 0, Time elapsed: 0.81 sec
+------------- Standard Output ---------------
+--Output from test registerAccount null username--
+--Output from test registerAccount null password--
+--Output from test registerAccount user already registered--
+--Output from test registerAccount user not yet registered--
+--Output from test tryLogIn null username--
+--Output from test tryLogIn null password--
+--Output from test tryLogIn user already registered--
+--Output from test tryLogIn user not yet registered--
+--Output from test addPasswordEntry null username--
+--Output from test addPasswordEntry null password--
+--Output from test addPasswordEntry null accountName--
+--Output from test addPasswordEntry duplicate accountName--
+--Output from test addPasswordEntry user not yet registered--
+--Output from test addPasswordEntry add new password valid--
+--Output from test editPasswordEntry null id--
+--Output from test editPasswordEntry null accountName--
+--Output from test editPasswordEntry null password (aka only change accountName)--
+--Output from test editPasswordEntry all valid--
+--Output from test editPasswordEntry invalid id--
+--Output from test removePasswordEntry invalid id--
+--Output from test removePasswordEntry valid id--
+--Output from test removePasswordEntry try to remove twice--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from test registerAccount null username--
+--Output from test registerAccount null password--
+--Output from test registerAccount user already registered--
+--Output from test registerAccount user not yet registered--
+--Output from test tryLogIn null username--
+--Output from test tryLogIn null password--
+--Output from test tryLogIn user already registered--
+--Output from test tryLogIn user not yet registered--
+--Output from test addPasswordEntry null username--
+--Output from test addPasswordEntry null password--
+--Output from test addPasswordEntry null accountName--
+--Output from test addPasswordEntry duplicate accountName--
+--Output from test addPasswordEntry user not yet registered--
+--Output from test addPasswordEntry add new password valid--
+--Output from test editPasswordEntry null id--
+--Output from test editPasswordEntry null accountName--
+--Output from test editPasswordEntry null password (aka only change accountName)--
+--Output from test editPasswordEntry all valid--
+--Output from test editPasswordEntry invalid id--
+--Output from test removePasswordEntry invalid id--
+--Output from test removePasswordEntry valid id--
+--Output from test removePasswordEntry try to remove twice--
+------------- ---------------- ---------------
+
+Testcase: test registerAccount null username took 0.263 sec
+Testcase: test registerAccount null password took 0.028 sec
+Testcase: test registerAccount user already registered took 0.033 sec
+Testcase: test registerAccount user not yet registered took 0.022 sec
+Testcase: test tryLogIn null username took 0.028 sec
+Testcase: test tryLogIn null password took 0.022 sec
+Testcase: test tryLogIn user already registered took 0.023 sec
+Testcase: test tryLogIn user not yet registered took 0.021 sec
+Testcase: test addPasswordEntry null username took 0.026 sec
+Testcase: test addPasswordEntry null password took 0.018 sec
+Testcase: test addPasswordEntry null accountName took 0.016 sec
+Testcase: test addPasswordEntry duplicate accountName took 0.021 sec
+Testcase: test addPasswordEntry user not yet registered took 0.022 sec
+Testcase: test addPasswordEntry add new password valid took 0.028 sec
+Testcase: test editPasswordEntry null id took 0.039 sec
+Testcase: test editPasswordEntry null accountName took 0.045 sec
+Testcase: test editPasswordEntry null password (aka only change accountName) took 0.025 sec
+Testcase: test editPasswordEntry all valid took 0.021 sec
+Testcase: test editPasswordEntry invalid id took 0.017 sec
+Testcase: test removePasswordEntry invalid id took 0.032 sec
+Testcase: test removePasswordEntry valid id took 0.028 sec
+Testcase: test removePasswordEntry try to remove twice took 0.022 sec

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="USD1600636" id="0" name="HelloControllerSpec" package="hello_world" tests="19" time="2.58" timestamp="2017-05-24T17:48:50">
+      <properties />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test try log in success" time="1.564" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test try log in failure" time="0.045" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test try register success" time="0.039" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test try register failure" time="0.03" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test checkLoggedIn success" time="0.028" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test checkLoggedIn failure" time="0.022" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test getData loggedIn empytData" time="0.417" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test getData logged in has data" time="0.045" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test getData logged out" time="0.028" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test tryRegister failure" time="0.025" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test tryRegister success" time="0.052" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test logout already logged in" time="0.029" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test logout not logged in" time="0.025" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test addPassword success" time="0.042" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test addPassword failure" time="0.037" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test editPassword success" time="0.041" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test editPassword failure" time="0.027" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test removePassword success" time="0.038" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test removePassword failure" time="0.031" />
+
+      <system-out><![CDATA[--Output from test try log in success--
+--Output from test try log in failure--
+--Output from test try register success--
+--Output from test try register failure--
+--Output from test checkLoggedIn success--
+--Output from test checkLoggedIn failure--
+--Output from test getData loggedIn empytData--
+--Output from test getData logged in has data--
+--Output from test getData logged out--
+--Output from test tryRegister failure--
+--Output from test tryRegister success--
+--Output from test logout already logged in--
+--Output from test logout not logged in--
+--Output from test addPassword success--
+--Output from test addPassword failure--
+--Output from test editPassword success--
+--Output from test editPassword failure--
+--Output from test removePassword success--
+--Output from test removePassword failure--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from test try log in success--
+--Output from test try log in failure--
+--Output from test try register success--
+--Output from test try register failure--
+--Output from test checkLoggedIn success--
+--Output from test checkLoggedIn failure--
+--Output from test getData loggedIn empytData--
+--Output from test getData logged in has data--
+--Output from test getData logged out--
+--Output from test tryRegister failure--
+--Output from test tryRegister success--
+--Output from test logout already logged in--
+--Output from test logout not logged in--
+--Output from test addPassword success--
+--Output from test addPassword failure--
+--Output from test editPassword success--
+--Output from test editPassword failure--
+--Output from test removePassword success--
+--Output from test removePassword failure--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="USD1600636" id="1" name="HelloWorldServiceSpec" package="hello_world" tests="22" time="0.81" timestamp="2017-05-24T17:48:52">
+      <properties />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount null username" time="0.263" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount null password" time="0.028" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount user already registered" time="0.033" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount user not yet registered" time="0.022" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn null username" time="0.028" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn null password" time="0.022" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn user already registered" time="0.023" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn user not yet registered" time="0.021" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null username" time="0.025" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null password" time="0.018" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null accountName" time="0.016" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry duplicate accountName" time="0.021" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry user not yet registered" time="0.021" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry add new password valid" time="0.028" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null id" time="0.04" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null accountName" time="0.045" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null password (aka only change accountName)" time="0.025" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry all valid" time="0.021" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry invalid id" time="0.017" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry invalid id" time="0.032" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry valid id" time="0.028" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry try to remove twice" time="0.022" />
+
+      <system-out><![CDATA[--Output from test registerAccount null username--
+--Output from test registerAccount null password--
+--Output from test registerAccount user already registered--
+--Output from test registerAccount user not yet registered--
+--Output from test tryLogIn null username--
+--Output from test tryLogIn null password--
+--Output from test tryLogIn user already registered--
+--Output from test tryLogIn user not yet registered--
+--Output from test addPasswordEntry null username--
+--Output from test addPasswordEntry null password--
+--Output from test addPasswordEntry null accountName--
+--Output from test addPasswordEntry duplicate accountName--
+--Output from test addPasswordEntry user not yet registered--
+--Output from test addPasswordEntry add new password valid--
+--Output from test editPasswordEntry null id--
+--Output from test editPasswordEntry null accountName--
+--Output from test editPasswordEntry null password (aka only change accountName)--
+--Output from test editPasswordEntry all valid--
+--Output from test editPasswordEntry invalid id--
+--Output from test removePasswordEntry invalid id--
+--Output from test removePasswordEntry valid id--
+--Output from test removePasswordEntry try to remove twice--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from test registerAccount null username--
+--Output from test registerAccount null password--
+--Output from test registerAccount user already registered--
+--Output from test registerAccount user not yet registered--
+--Output from test tryLogIn null username--
+--Output from test tryLogIn null password--
+--Output from test tryLogIn user already registered--
+--Output from test tryLogIn user not yet registered--
+--Output from test addPasswordEntry null username--
+--Output from test addPasswordEntry null password--
+--Output from test addPasswordEntry null accountName--
+--Output from test addPasswordEntry duplicate accountName--
+--Output from test addPasswordEntry user not yet registered--
+--Output from test addPasswordEntry add new password valid--
+--Output from test editPasswordEntry null id--
+--Output from test editPasswordEntry null accountName--
+--Output from test editPasswordEntry null password (aka only change accountName)--
+--Output from test editPasswordEntry all valid--
+--Output from test editPasswordEntry invalid id--
+--Output from test removePasswordEntry invalid id--
+--Output from test removePasswordEntry valid id--
+--Output from test removePasswordEntry try to remove twice--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="USD1600636" id="2" name="PersonUnitTests" package="hello_world" tests="1" time="1.773" timestamp="2017-05-24T17:48:48">
+      <properties />
+
+      <testcase classname="hello_world.PersonUnitTests" name="testConstraints" time="1.71" />
+
+      <system-out><![CDATA[--Output from testConstraints--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testConstraints--
+]]></system-err>
+
+  </testsuite>
+</testsuites>

@@ -1,0 +1,64 @@
+Testsuite: hello_world.HelloControllerSpec
+Tests run: 19, Failures: 0, Errors: 0, Time elapsed: 2.58 sec
+------------- Standard Output ---------------
+--Output from test try log in success--
+--Output from test try log in failure--
+--Output from test try register success--
+--Output from test try register failure--
+--Output from test checkLoggedIn success--
+--Output from test checkLoggedIn failure--
+--Output from test getData loggedIn empytData--
+--Output from test getData logged in has data--
+--Output from test getData logged out--
+--Output from test tryRegister failure--
+--Output from test tryRegister success--
+--Output from test logout already logged in--
+--Output from test logout not logged in--
+--Output from test addPassword success--
+--Output from test addPassword failure--
+--Output from test editPassword success--
+--Output from test editPassword failure--
+--Output from test removePassword success--
+--Output from test removePassword failure--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from test try log in success--
+--Output from test try log in failure--
+--Output from test try register success--
+--Output from test try register failure--
+--Output from test checkLoggedIn success--
+--Output from test checkLoggedIn failure--
+--Output from test getData loggedIn empytData--
+--Output from test getData logged in has data--
+--Output from test getData logged out--
+--Output from test tryRegister failure--
+--Output from test tryRegister success--
+--Output from test logout already logged in--
+--Output from test logout not logged in--
+--Output from test addPassword success--
+--Output from test addPassword failure--
+--Output from test editPassword success--
+--Output from test editPassword failure--
+--Output from test removePassword success--
+--Output from test removePassword failure--
+------------- ---------------- ---------------
+
+Testcase: test try log in success took 1.564 sec
+Testcase: test try log in failure took 0.045 sec
+Testcase: test try register success took 0.039 sec
+Testcase: test try register failure took 0.03 sec
+Testcase: test checkLoggedIn success took 0.028 sec
+Testcase: test checkLoggedIn failure took 0.022 sec
+Testcase: test getData loggedIn empytData took 0.417 sec
+Testcase: test getData logged in has data took 0.045 sec
+Testcase: test getData logged out took 0.028 sec
+Testcase: test tryRegister failure took 0.025 sec
+Testcase: test tryRegister success took 0.052 sec
+Testcase: test logout already logged in took 0.029 sec
+Testcase: test logout not logged in took 0.025 sec
+Testcase: test addPassword success took 0.042 sec
+Testcase: test addPassword failure took 0.037 sec
+Testcase: test editPassword success took 0.041 sec
+Testcase: test editPassword failure took 0.027 sec
+Testcase: test removePassword success took 0.038 sec
+Testcase: test removePassword failure took 0.031 sec

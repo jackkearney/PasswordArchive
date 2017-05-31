@@ -1,0 +1,70 @@
+<div class="sq home">
+    <h1 class="header-welcome"> Welcome, <span data-ng-bind="username"></span>!</h1>
+
+    <table>
+        <tr>
+            <th> Account </th> <th> Password </th><th> url </th>
+        </tr>
+        <tr data-ng-repeat="entry in passList">
+            <td data-ng-bind="entry.accountName"></td>
+            <td class="password-entry" data-ng-bind="entry.password"></td>
+            <td data-ng-bind="entry.url"></td>
+            <td> <button class="btn btn-default" data-ng-click="editEntry(entry)"> edit </button>  </td>
+            <td> <button class="btn btn-default" data-ng-click="remove()"> remove </button></td>
+        </tr>
+    </table>
+    <br>
+    <button class="btn btn-default logout-btn" data-ng-click="logout()"> log out </button>
+    <!--<button class="btn btn-default refresh-btn" data-ng-click="getData()"> refresh </button>-->
+    <div class="left-lean">
+        <button class="btn btn-default add-new-btn" data-ng-click="addEntry()"> Add New Password Entry </button>
+
+        <form  class="add-form" data-ng-show="showEditForm">
+            <h2 >Edit Existing Password:</h2>
+            <div>
+                <label>Account:</label>
+                <input class="form-control standard-margin-bottom" placeholder="(required)"  data-ng-model="edit.name">
+            </div>
+            <div>
+                <label>Password:</label>
+                <input class="form-control standard-margin-bottom" placeholder="(required)"  data-ng-model="edit.pass">
+            </div>
+            <div>
+                <label>URL:</label>
+                <input class="form-control standard-margin-bottom" placeholder="(optional)" name="url" value="" data-ng-model="edit.url" data-ng-style="urlField" >
+            </div>
+            <special >
+                {{error_message}}
+            </special>
+            <div style="text-align: center">
+                <button style="float: left" class="btn btn-default" data-ng-click="saveEdits()" data-ng-disabled="edit.name.length == 0 || edit.pass.length > 100 || edit.pass.length == 0 || edit.name.length > 100 ">&#10004; Save </button>
+                <button class="btn btn-default" data-ng-click="cancel()">&#x2717; Cancel</button>
+                <button style="float: right"  class="btn btn-default" data-ng-click="checkUrl()">&#x2719; check url </button>
+            </div>
+        </form>
+
+        <form  class="add-form" name="myForm" data-ng-show="showAddForm" >
+            <h2 >Add New Password:</h2>
+            <div>
+                <label>Account:</label>
+                <input class="form-control standard-margin-bottom" placeholder="(required)"  data-ng-model="new.name">
+            </div>
+            <div>
+                <label>Password:</label>
+                <input class="form-control standard-margin-bottom" placeholder="(required)"  data-ng-model="new.pass">
+            </div>
+            <div>
+                <label>URL:</label>
+                <input class="form-control standard-margin-bottom" placeholder="(optional)" name="url" value="" data-ng-model="new.url" data-ng-style="urlField" >
+            </div>
+            <special >
+                {{error_message}}
+            </special>
+            <div style="text-align: center">
+                <button style="float: left" class="btn btn-default" data-ng-click="saveNew()" data-ng-disabled="new.name.length == 0 || new.pass.length > 100 || new.pass.length == 0 || new.name.length > 100 ">&#10004; Save</button>
+                <button class="btn btn-default" data-ng-click="cancel()">&#x2718; Cancel</button>
+                <button style="float: right" class="btn btn-default" data-ng-click="checkUrl()">&#x2719; check url </button>
+            </div>
+        </form>
+    </div>
+</div>

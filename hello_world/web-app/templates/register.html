@@ -1,0 +1,27 @@
+<h1> Register for a new account! </h1>
+<div class="sq reg">
+    <div class="left-lean">
+
+        <form>
+            <div> Username and password must be between 4 and 10 characters. </div>
+            <div>
+                <label> Username : </label> <input class="form-control standard-margin-bottom" data-ng-model="username"  maxlength="10"/>
+            </div>
+            <div>
+                <label> Password : </label> <input type="password" class="form-control standard-margin-bottom" data-ng-model="password_1"  maxlength="10"/>
+            </div>
+            <div>
+                <label> Re-enter Password : </label> <input type="password" class="form-control standard-margin-bottom" data-ng-model="password_2"/>
+            </div>
+            <special >
+                {{error_message}}
+            </special>
+            <div style="text-align: center">
+                <button style="float: left;" class="btn btn-default" data-ng-disabled="password_1.length < 4 || username.length < 4 || password_1 != password_2" data-ng-click="tryRegister()" > Register </button>
+                <special style="color: #4f4f4f; position: relative; top: 6px"> already have an account? </special>
+                <button style="float: right" class="btn btn-default" data-ui-sref="signIn">Sign In </button>
+            </div>
+        </form>
+    </div>
+</div>
+

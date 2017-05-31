@@ -1,0 +1,24 @@
+<h1> Sign in to your account </h1>
+<div class="sq loggin">
+    <div class="left-lean">
+
+        <form>
+            <div>
+                <label> Username : </label><input class="form-control standard-margin-bottom" data-ng-model="username" maxlength="10"/>
+            </div>
+            <div>
+                <label> Password : </label><input type="password" class="form-control standard-margin-bottom" data-ng-model="password_1" maxlength="10"/>
+            </div>
+            <special >
+                {{error_message}}
+            </special>
+            <div style="text-align: center">
+                <button style="float: left;" class="btn btn-default" data-ng-disabled="password_1.length < 4 || username.length < 4"  data-ng-click="trySignIn()" > SignIn </button>
+                <special style="color: #4f4f4f; position: relative; top: 6px"> don't have an account? </special>
+                <button style="float: right" class="btn btn-default" data-ui-sref="reg">Register </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+

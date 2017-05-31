@@ -15,10 +15,15 @@
      - Failed tests</h1>
 <p class="intro">
                         Executed
-                        42
+                        40
                         tests
                     
-                        without a single error or failure!
+                        with
+                        5 errors
+
+                        and
+                        2 failures
+                        .
                     </p>
 </div>
 <div class="grid_2 omega">
@@ -41,6 +46,638 @@
 </nav>
 </div>
 <div class="clear"></div>
+<div class="testsuite error">
+<div class="header">
+<h2>HelloWorldServiceSpec</h2>
+<h3>
+                        Executed
+                        22
+                        tests
+                    
+                        with
+                        4 errors
+                        .
+                    </h3>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test registerAccount null username">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test registerAccount null username</b>
+</p>
+<p class="summary">Executed in 0.809 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test registerAccount null password">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test registerAccount null password</b>
+</p>
+<p class="summary">Executed in 0.068 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test registerAccount user already registered">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test registerAccount user already registered</b>
+</p>
+<p class="summary">Executed in 0.065 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test registerAccount user not yet registered">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test registerAccount user not yet registered</b>
+</p>
+<p class="summary">Executed in 0.049 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test tryLogIn null username">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test tryLogIn null username</b>
+</p>
+<p class="summary">Executed in 0.06 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test tryLogIn null password">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test tryLogIn null password</b>
+</p>
+<p class="summary">Executed in 0.037 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test tryLogIn user already registered">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test tryLogIn user already registered</b>
+</p>
+<p class="summary">Executed in 0.062 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test tryLogIn user not yet registered">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test tryLogIn user not yet registered</b>
+</p>
+<p class="summary">Executed in 0.059 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix error grid_8 alpha omega" data-name="test addPasswordEntry null username">
+<div class="grid_3 alpha">
+<p>
+<span class="icon error"></span><b class="testname message error">test addPasswordEntry null username</b>
+</p>
+<p class="summary">Executed in 0.072 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Some input was null.</b>
+</p>
+<pre>java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null username(HelloWorldServiceSpec.groovy:113)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix error grid_8 alpha omega" data-name="test addPasswordEntry null password">
+<div class="grid_3 alpha">
+<p>
+<span class="icon error"></span><b class="testname message error">test addPasswordEntry null password</b>
+</p>
+<p class="summary">Executed in 0.06 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Some input was null.</b>
+</p>
+<pre>java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null password(HelloWorldServiceSpec.groovy:125)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix error grid_8 alpha omega" data-name="test addPasswordEntry null accountName">
+<div class="grid_3 alpha">
+<p>
+<span class="icon error"></span><b class="testname message error">test addPasswordEntry null accountName</b>
+</p>
+<p class="summary">Executed in 0.078 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Some input was null.</b>
+</p>
+<pre>java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null accountName(HelloWorldServiceSpec.groovy:137)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test addPasswordEntry duplicate accountName">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test addPasswordEntry duplicate accountName</b>
+</p>
+<p class="summary">Executed in 0.083 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix error grid_8 alpha omega" data-name="test addPasswordEntry user not yet registered">
+<div class="grid_3 alpha">
+<p>
+<span class="icon error"></span><b class="testname message error">test addPasswordEntry user not yet registered</b>
+</p>
+<p class="summary">Executed in 0.09 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">User not registered.</b>
+</p>
+<pre>java.lang.Throwable: User not registered.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:54)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry user not yet registered(HelloWorldServiceSpec.groovy:161)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test addPasswordEntry add new password valid">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test addPasswordEntry add new password valid</b>
+</p>
+<p class="summary">Executed in 0.098 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test editPasswordEntry null id">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test editPasswordEntry null id</b>
+</p>
+<p class="summary">Executed in 0.152 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test editPasswordEntry null accountName">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test editPasswordEntry null accountName</b>
+</p>
+<p class="summary">Executed in 0.132 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test editPasswordEntry null password (aka only change accountName)">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test editPasswordEntry null password (aka only change accountName)</b>
+</p>
+<p class="summary">Executed in 0.057 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test editPasswordEntry all valid">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test editPasswordEntry all valid</b>
+</p>
+<p class="summary">Executed in 0.052 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test editPasswordEntry invalid id">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test editPasswordEntry invalid id</b>
+</p>
+<p class="summary">Executed in 0.047 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test removePasswordEntry invalid id">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test removePasswordEntry invalid id</b>
+</p>
+<p class="summary">Executed in 0.073 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test removePasswordEntry valid id">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test removePasswordEntry valid id</b>
+</p>
+<p class="summary">Executed in 0.063 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test removePasswordEntry try to remove twice">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test removePasswordEntry try to remove twice</b>
+</p>
+<p class="summary">Executed in 0.048 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="clearfix output footer">
+<div class="sysout">
+<h2>Standard output</h2>
+<pre class="stdout">--Output from test registerAccount null username--
+--Output from test registerAccount null password--
+--Output from test registerAccount user already registered--
+--Output from test registerAccount user not yet registered--
+--Output from test tryLogIn null username--
+--Output from test tryLogIn null password--
+--Output from test tryLogIn user already registered--
+--Output from test tryLogIn user not yet registered--
+--Output from test addPasswordEntry null username--
+--Output from test addPasswordEntry null password--
+--Output from test addPasswordEntry null accountName--
+--Output from test addPasswordEntry duplicate accountName--
+--Output from test addPasswordEntry user not yet registered--
+--Output from test addPasswordEntry add new password valid--
+--Output from test editPasswordEntry null id--
+--Output from test editPasswordEntry null accountName--
+--Output from test editPasswordEntry null password (aka only change accountName)--
+--Output from test editPasswordEntry all valid--
+--Output from test editPasswordEntry invalid id--
+--Output from test removePasswordEntry invalid id--
+--Output from test removePasswordEntry valid id--
+--Output from test removePasswordEntry try to remove twice--
+</pre>
+</div>
+<div class="syserr">
+<h2>System error</h2>
+<pre class="syserr">--Output from test registerAccount null username--
+--Output from test registerAccount null password--
+--Output from test registerAccount user already registered--
+--Output from test registerAccount user not yet registered--
+--Output from test tryLogIn null username--
+--Output from test tryLogIn null password--
+--Output from test tryLogIn user already registered--
+--Output from test tryLogIn user not yet registered--
+--Output from test addPasswordEntry null username--
+--Output from test addPasswordEntry null password--
+--Output from test addPasswordEntry null accountName--
+--Output from test addPasswordEntry duplicate accountName--
+--Output from test addPasswordEntry user not yet registered--
+--Output from test addPasswordEntry add new password valid--
+--Output from test editPasswordEntry null id--
+--Output from test editPasswordEntry null accountName--
+--Output from test editPasswordEntry null password (aka only change accountName)--
+--Output from test editPasswordEntry all valid--
+--Output from test editPasswordEntry invalid id--
+--Output from test removePasswordEntry invalid id--
+--Output from test removePasswordEntry valid id--
+--Output from test removePasswordEntry try to remove twice--
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testsuite error">
+<div class="header">
+<h2>HelloControllerSpec</h2>
+<h3>
+                        Executed
+                        17
+                        tests
+                    
+                        with
+                        one error
+
+                        and
+                        2 failures
+                        .
+                    </h3>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test try log in success">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test try log in success</b>
+</p>
+<p class="summary">Executed in 2.296 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test try log in failure">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test try log in failure</b>
+</p>
+<p class="summary">Executed in 0.071 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test try register success">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test try register success</b>
+</p>
+<p class="summary">Executed in 0.087 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test try register failure">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test try register failure</b>
+</p>
+<p class="summary">Executed in 0.07 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test getData loggedIn empytData">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test getData loggedIn empytData</b>
+</p>
+<p class="summary">Executed in 0.081 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix error grid_8 alpha omega" data-name="test getData logged in has data">
+<div class="grid_3 alpha">
+<p>
+<span class="icon error"></span><b class="testname message error">test getData logged in has data</b>
+</p>
+<p class="summary">Executed in 0.121 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Cannot get property 'username' on null object</b>
+</p>
+<pre>java.lang.NullPointerException: Cannot get property 'username' on null object
+	at hello_world.HelloControllerSpec.test getData logged in has data(HelloControllerSpec.groovy:87)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test getData logged out">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test getData logged out</b>
+</p>
+<p class="summary">Executed in 0.09 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix failure grid_8 alpha omega" data-name="test tryRegister failure">
+<div class="grid_3 alpha">
+<p>
+<span class="icon failure"></span><b class="testname message failure">test tryRegister failure</b>
+</p>
+<p class="summary">Executed in 0.229 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Condition not satisfied:
+
+response.json["status"] == "Failed to create account."
+|        |   |          |
+|        |   |          false
+|        |   |          19 differences (24% similarity)
+|        |   |          (Username-) (al)rea(dy) (t)a(ke--)n(-).
+|        |   |          (Failed to) (c-)rea(te) (-)a(ccou)n(t).
+|        |   Username already taken.
+|        [status:Username already taken.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@2a8dd942
+</b>
+</p>
+<pre>junit.framework.AssertionFailedError: Condition not satisfied:
+
+response.json["status"] == "Failed to create account."
+|        |   |          |
+|        |   |          false
+|        |   |          19 differences (24% similarity)
+|        |   |          (Username-) (al)rea(dy) (t)a(ke--)n(-).
+|        |   |          (Failed to) (c-)rea(te) (-)a(ccou)n(t).
+|        |   Username already taken.
+|        [status:Username already taken.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@2a8dd942
+
+	at hello_world.HelloControllerSpec.test tryRegister failure(HelloControllerSpec.groovy:110)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test tryRegister success">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test tryRegister success</b>
+</p>
+<p class="summary">Executed in 0.233 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test logout already logged in">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test logout already logged in</b>
+</p>
+<p class="summary">Executed in 0.103 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test logout not logged in">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test logout not logged in</b>
+</p>
+<p class="summary">Executed in 0.057 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test addPassword success">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test addPassword success</b>
+</p>
+<p class="summary">Executed in 0.108 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix failure grid_8 alpha omega" data-name="test addPassword failure">
+<div class="grid_3 alpha">
+<p>
+<span class="icon failure"></span><b class="testname message failure">test addPassword failure</b>
+</p>
+<p class="summary">Executed in 0.096 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Condition not satisfied:
+
+response.json["status"] == "error: could not add Password Entry."
+|        |   |          |
+|        |   |          false
+|        |   |          54 differences (37% similarity)
+|        |   |          (E)rror: could not add (p)assword(.) (Check you do )n(o)t( al)r(ead)y( have this account listed above).
+|        |   |          (e)rror: could not add (P)assword(-) (E------------)n(-)t(---)r(---)y(-------------------------------).
+|        |   Error: could not add password. Check you do not already have this account listed above.
+|        [status:Error: could not add password. Check you do not already have this account listed above.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@37d28938
+</b>
+</p>
+<pre>junit.framework.AssertionFailedError: Condition not satisfied:
+
+response.json["status"] == "error: could not add Password Entry."
+|        |   |          |
+|        |   |          false
+|        |   |          54 differences (37% similarity)
+|        |   |          (E)rror: could not add (p)assword(.) (Check you do )n(o)t( al)r(ead)y( have this account listed above).
+|        |   |          (e)rror: could not add (P)assword(-) (E------------)n(-)t(---)r(---)y(-------------------------------).
+|        |   Error: could not add password. Check you do not already have this account listed above.
+|        [status:Error: could not add password. Check you do not already have this account listed above.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@37d28938
+
+	at hello_world.HelloControllerSpec.test addPassword failure(HelloControllerSpec.groovy:169)
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test editPassword success">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test editPassword success</b>
+</p>
+<p class="summary">Executed in 0.211 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test editPassword failure">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test editPassword failure</b>
+</p>
+<p class="summary">Executed in 0.192 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test removePassword success">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test removePassword success</b>
+</p>
+<p class="summary">Executed in 0.128 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="test removePassword failure">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">test removePassword failure</b>
+</p>
+<p class="summary">Executed in 0.07 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="clearfix output footer">
+<div class="sysout">
+<h2>Standard output</h2>
+<pre class="stdout">--Output from test try log in success--
+--Output from test try log in failure--
+--Output from test try register success--
+--Output from test try register failure--
+--Output from test getData loggedIn empytData--
+--Output from test getData logged in has data--
+--Output from test getData logged out--
+--Output from test tryRegister failure--
+--Output from test tryRegister success--
+--Output from test logout already logged in--
+--Output from test logout not logged in--
+--Output from test addPassword success--
+--Output from test addPassword failure--
+--Output from test editPassword success--
+--Output from test editPassword failure--
+--Output from test removePassword success--
+--Output from test removePassword failure--
+</pre>
+</div>
+<div class="syserr">
+<h2>System error</h2>
+<pre class="syserr">--Output from test try log in success--
+--Output from test try log in failure--
+--Output from test try register success--
+--Output from test try register failure--
+--Output from test getData loggedIn empytData--
+--Output from test getData logged in has data--
+--Output from test getData logged out--
+--Output from test tryRegister failure--
+--Output from test tryRegister success--
+--Output from test logout already logged in--
+--Output from test logout not logged in--
+--Output from test addPassword success--
+--Output from test addPassword failure--
+--Output from test editPassword success--
+--Output from test editPassword failure--
+--Output from test removePassword success--
+--Output from test removePassword failure--
+</pre>
+</div>
+</div>
+<div class="clear"></div>
+</div>
 <div class="clear"></div>
 </div>
 <!--

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="USD1600636" name="hello_world.PersonUnitTests" tests="1" time="1.773" timestamp="2017-05-24T17:48:48">
+<testsuite errors="0" failures="0" hostname="USD1600636" name="hello_world.PersonUnitTests" tests="1" time="2.5" timestamp="2017-05-31T17:37:17">
   <properties />
-  <testcase classname="hello_world.PersonUnitTests" name="testConstraints" time="1.71" />
+  <testcase classname="hello_world.PersonUnitTests" name="testConstraints" time="2.409" />
   <system-out><![CDATA[--Output from testConstraints--
 ]]></system-out>
   <system-err><![CDATA[--Output from testConstraints--

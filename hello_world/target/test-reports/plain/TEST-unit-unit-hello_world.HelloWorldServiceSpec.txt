@@ -1,5 +1,5 @@
 Testsuite: hello_world.HelloWorldServiceSpec
-Tests run: 22, Failures: 0, Errors: 0, Time elapsed: 0.81 sec
+Tests run: 22, Failures: 0, Errors: 4, Time elapsed: 2.33 sec
 ------------- Standard Output ---------------
 --Output from test registerAccount null username--
 --Output from test registerAccount null password--
@@ -49,25 +49,49 @@ Tests run: 22, Failures: 0, Errors: 0, Time elapsed: 0.81 sec
 --Output from test removePasswordEntry try to remove twice--
 ------------- ---------------- ---------------
 
-Testcase: test registerAccount null username took 0.263 sec
-Testcase: test registerAccount null password took 0.028 sec
-Testcase: test registerAccount user already registered took 0.033 sec
-Testcase: test registerAccount user not yet registered took 0.022 sec
-Testcase: test tryLogIn null username took 0.028 sec
-Testcase: test tryLogIn null password took 0.022 sec
-Testcase: test tryLogIn user already registered took 0.023 sec
-Testcase: test tryLogIn user not yet registered took 0.021 sec
-Testcase: test addPasswordEntry null username took 0.026 sec
-Testcase: test addPasswordEntry null password took 0.018 sec
-Testcase: test addPasswordEntry null accountName took 0.016 sec
-Testcase: test addPasswordEntry duplicate accountName took 0.021 sec
-Testcase: test addPasswordEntry user not yet registered took 0.022 sec
-Testcase: test addPasswordEntry add new password valid took 0.028 sec
-Testcase: test editPasswordEntry null id took 0.039 sec
-Testcase: test editPasswordEntry null accountName took 0.045 sec
-Testcase: test editPasswordEntry null password (aka only change accountName) took 0.025 sec
-Testcase: test editPasswordEntry all valid took 0.021 sec
-Testcase: test editPasswordEntry invalid id took 0.017 sec
-Testcase: test removePasswordEntry invalid id took 0.032 sec
-Testcase: test removePasswordEntry valid id took 0.028 sec
-Testcase: test removePasswordEntry try to remove twice took 0.022 sec
+Testcase: test registerAccount null username took 0.809 sec
+Testcase: test registerAccount null password took 0.068 sec
+Testcase: test registerAccount user already registered took 0.065 sec
+Testcase: test registerAccount user not yet registered took 0.049 sec
+Testcase: test tryLogIn null username took 0.06 sec
+Testcase: test tryLogIn null password took 0.037 sec
+Testcase: test tryLogIn user already registered took 0.062 sec
+Testcase: test tryLogIn user not yet registered took 0.059 sec
+Testcase: test addPasswordEntry null username took 0.071 sec
+	Caused an ERROR
+Some input was null.
+java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null username(HelloWorldServiceSpec.groovy:113)
+
+Testcase: test addPasswordEntry null password took 0.059 sec
+	Caused an ERROR
+Some input was null.
+java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null password(HelloWorldServiceSpec.groovy:125)
+
+Testcase: test addPasswordEntry null accountName took 0.076 sec
+	Caused an ERROR
+Some input was null.
+java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null accountName(HelloWorldServiceSpec.groovy:137)
+
+Testcase: test addPasswordEntry duplicate accountName took 0.083 sec
+Testcase: test addPasswordEntry user not yet registered took 0.089 sec
+	Caused an ERROR
+User not registered.
+java.lang.Throwable: User not registered.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:54)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry user not yet registered(HelloWorldServiceSpec.groovy:161)
+
+Testcase: test addPasswordEntry add new password valid took 0.098 sec
+Testcase: test editPasswordEntry null id took 0.152 sec
+Testcase: test editPasswordEntry null accountName took 0.132 sec
+Testcase: test editPasswordEntry null password (aka only change accountName) took 0.057 sec
+Testcase: test editPasswordEntry all valid took 0.053 sec
+Testcase: test editPasswordEntry invalid id took 0.047 sec
+Testcase: test removePasswordEntry invalid id took 0.073 sec
+Testcase: test removePasswordEntry valid id took 0.063 sec
+Testcase: test removePasswordEntry try to remove twice took 0.048 sec

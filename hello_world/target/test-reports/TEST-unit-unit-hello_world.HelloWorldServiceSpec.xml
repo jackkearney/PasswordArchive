@@ -1,28 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="USD1600636" name="hello_world.HelloWorldServiceSpec" tests="22" time="0.81" timestamp="2017-05-24T17:48:52">
+<testsuite errors="4" failures="0" hostname="USD1600636" name="hello_world.HelloWorldServiceSpec" tests="22" time="2.33" timestamp="2017-05-31T17:37:24">
   <properties />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount null username" time="0.263" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount null password" time="0.028" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount user already registered" time="0.033" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount user not yet registered" time="0.022" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn null username" time="0.028" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn null password" time="0.022" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn user already registered" time="0.023" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn user not yet registered" time="0.021" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null username" time="0.025" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null password" time="0.018" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null accountName" time="0.016" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry duplicate accountName" time="0.021" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry user not yet registered" time="0.021" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry add new password valid" time="0.028" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null id" time="0.04" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null accountName" time="0.045" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null password (aka only change accountName)" time="0.025" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry all valid" time="0.021" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry invalid id" time="0.017" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry invalid id" time="0.032" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry valid id" time="0.028" />
-  <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry try to remove twice" time="0.022" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount null username" time="0.809" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount null password" time="0.068" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount user already registered" time="0.065" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount user not yet registered" time="0.049" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn null username" time="0.06" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn null password" time="0.037" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn user already registered" time="0.062" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn user not yet registered" time="0.059" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null username" time="0.072">
+    <error message="Some input was null." type="java.lang.Throwable">java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null username(HelloWorldServiceSpec.groovy:113)
+</error>
+  </testcase>
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null password" time="0.06">
+    <error message="Some input was null." type="java.lang.Throwable">java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null password(HelloWorldServiceSpec.groovy:125)
+</error>
+  </testcase>
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null accountName" time="0.078">
+    <error message="Some input was null." type="java.lang.Throwable">java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null accountName(HelloWorldServiceSpec.groovy:137)
+</error>
+  </testcase>
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry duplicate accountName" time="0.083" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry user not yet registered" time="0.09">
+    <error message="User not registered." type="java.lang.Throwable">java.lang.Throwable: User not registered.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:54)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry user not yet registered(HelloWorldServiceSpec.groovy:161)
+</error>
+  </testcase>
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry add new password valid" time="0.098" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null id" time="0.152" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null accountName" time="0.132" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null password (aka only change accountName)" time="0.057" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry all valid" time="0.052" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry invalid id" time="0.047" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry invalid id" time="0.073" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry valid id" time="0.063" />
+  <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry try to remove twice" time="0.048" />
   <system-out><![CDATA[--Output from test registerAccount null username--
 --Output from test registerAccount null password--
 --Output from test registerAccount user already registered--

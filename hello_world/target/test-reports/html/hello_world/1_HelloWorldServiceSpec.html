@@ -35,7 +35,7 @@
 </nav>
 </div>
 <div class="clear"></div>
-<div class="testsuite success">
+<div class="testsuite error">
 <div class="header">
 <h2>HelloWorldServiceSpec</h2>
 <h3>
@@ -43,7 +43,9 @@
                         22
                         tests
                     
-                        without a single error or failure!
+                        with
+                        4 errors
+                        .
                     </h3>
 </div>
 <div class="testcase clearfix success grid_8 alpha omega" data-name="test registerAccount null username">
@@ -51,7 +53,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test registerAccount null username</b>
 </p>
-<p class="summary">Executed in 0.263 seconds.</p>
+<p class="summary">Executed in 0.809 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -61,7 +63,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test registerAccount null password</b>
 </p>
-<p class="summary">Executed in 0.028 seconds.</p>
+<p class="summary">Executed in 0.068 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -71,7 +73,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test registerAccount user already registered</b>
 </p>
-<p class="summary">Executed in 0.033 seconds.</p>
+<p class="summary">Executed in 0.065 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -81,7 +83,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test registerAccount user not yet registered</b>
 </p>
-<p class="summary">Executed in 0.022 seconds.</p>
+<p class="summary">Executed in 0.049 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -91,7 +93,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test tryLogIn null username</b>
 </p>
-<p class="summary">Executed in 0.028 seconds.</p>
+<p class="summary">Executed in 0.06 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -101,7 +103,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test tryLogIn null password</b>
 </p>
-<p class="summary">Executed in 0.022 seconds.</p>
+<p class="summary">Executed in 0.037 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -111,7 +113,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test tryLogIn user already registered</b>
 </p>
-<p class="summary">Executed in 0.023 seconds.</p>
+<p class="summary">Executed in 0.062 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -121,39 +123,69 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test tryLogIn user not yet registered</b>
 </p>
-<p class="summary">Executed in 0.021 seconds.</p>
+<p class="summary">Executed in 0.059 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="test addPasswordEntry null username">
+<div class="testcase clearfix error grid_8 alpha omega" data-name="test addPasswordEntry null username">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">test addPasswordEntry null username</b>
+<span class="icon error"></span><b class="testname message error">test addPasswordEntry null username</b>
 </p>
-<p class="summary">Executed in 0.025 seconds.</p>
+<p class="summary">Executed in 0.072 seconds.</p>
 </div>
-<div class="grid_5 omega outputinfo"></div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Some input was null.</b>
+</p>
+<pre>java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null username(HelloWorldServiceSpec.groovy:113)
+</pre>
+</div>
+</div>
 <div class="clear"></div>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="test addPasswordEntry null password">
+<div class="testcase clearfix error grid_8 alpha omega" data-name="test addPasswordEntry null password">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">test addPasswordEntry null password</b>
+<span class="icon error"></span><b class="testname message error">test addPasswordEntry null password</b>
 </p>
-<p class="summary">Executed in 0.018 seconds.</p>
+<p class="summary">Executed in 0.06 seconds.</p>
 </div>
-<div class="grid_5 omega outputinfo"></div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Some input was null.</b>
+</p>
+<pre>java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null password(HelloWorldServiceSpec.groovy:125)
+</pre>
+</div>
+</div>
 <div class="clear"></div>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="test addPasswordEntry null accountName">
+<div class="testcase clearfix error grid_8 alpha omega" data-name="test addPasswordEntry null accountName">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">test addPasswordEntry null accountName</b>
+<span class="icon error"></span><b class="testname message error">test addPasswordEntry null accountName</b>
 </p>
-<p class="summary">Executed in 0.016 seconds.</p>
+<p class="summary">Executed in 0.078 seconds.</p>
 </div>
-<div class="grid_5 omega outputinfo"></div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Some input was null.</b>
+</p>
+<pre>java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null accountName(HelloWorldServiceSpec.groovy:137)
+</pre>
+</div>
+</div>
 <div class="clear"></div>
 </div>
 <div class="testcase clearfix success grid_8 alpha omega" data-name="test addPasswordEntry duplicate accountName">
@@ -161,19 +193,29 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test addPasswordEntry duplicate accountName</b>
 </p>
-<p class="summary">Executed in 0.021 seconds.</p>
+<p class="summary">Executed in 0.083 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="test addPasswordEntry user not yet registered">
+<div class="testcase clearfix error grid_8 alpha omega" data-name="test addPasswordEntry user not yet registered">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">test addPasswordEntry user not yet registered</b>
+<span class="icon error"></span><b class="testname message error">test addPasswordEntry user not yet registered</b>
 </p>
-<p class="summary">Executed in 0.021 seconds.</p>
+<p class="summary">Executed in 0.09 seconds.</p>
 </div>
-<div class="grid_5 omega outputinfo"></div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">User not registered.</b>
+</p>
+<pre>java.lang.Throwable: User not registered.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:54)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry user not yet registered(HelloWorldServiceSpec.groovy:161)
+</pre>
+</div>
+</div>
 <div class="clear"></div>
 </div>
 <div class="testcase clearfix success grid_8 alpha omega" data-name="test addPasswordEntry add new password valid">
@@ -181,7 +223,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test addPasswordEntry add new password valid</b>
 </p>
-<p class="summary">Executed in 0.028 seconds.</p>
+<p class="summary">Executed in 0.098 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -191,7 +233,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test editPasswordEntry null id</b>
 </p>
-<p class="summary">Executed in 0.04 seconds.</p>
+<p class="summary">Executed in 0.152 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -201,7 +243,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test editPasswordEntry null accountName</b>
 </p>
-<p class="summary">Executed in 0.045 seconds.</p>
+<p class="summary">Executed in 0.132 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -211,7 +253,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test editPasswordEntry null password (aka only change accountName)</b>
 </p>
-<p class="summary">Executed in 0.025 seconds.</p>
+<p class="summary">Executed in 0.057 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -221,7 +263,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test editPasswordEntry all valid</b>
 </p>
-<p class="summary">Executed in 0.021 seconds.</p>
+<p class="summary">Executed in 0.052 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -231,7 +273,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test editPasswordEntry invalid id</b>
 </p>
-<p class="summary">Executed in 0.017 seconds.</p>
+<p class="summary">Executed in 0.047 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -241,7 +283,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test removePasswordEntry invalid id</b>
 </p>
-<p class="summary">Executed in 0.032 seconds.</p>
+<p class="summary">Executed in 0.073 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -251,7 +293,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test removePasswordEntry valid id</b>
 </p>
-<p class="summary">Executed in 0.028 seconds.</p>
+<p class="summary">Executed in 0.063 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -261,7 +303,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test removePasswordEntry try to remove twice</b>
 </p>
-<p class="summary">Executed in 0.022 seconds.</p>
+<p class="summary">Executed in 0.048 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>

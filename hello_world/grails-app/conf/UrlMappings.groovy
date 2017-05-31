@@ -1,6 +1,14 @@
 class UrlMappings {
 
+    static excludes = ['ssb/app.js']
+
 	static mappings = {
+
+        "/ssb/$controller/$action?/$id?" (parseRequest: true){
+            constraints {
+                // apply constraints here
+            }
+        }
 
         "/$controller/$action?/$id?(.$format)?"{
             constraints {

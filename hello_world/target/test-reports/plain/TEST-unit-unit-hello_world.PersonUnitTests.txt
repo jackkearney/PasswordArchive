@@ -1,5 +1,5 @@
 Testsuite: hello_world.PersonUnitTests
-Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 1.773 sec
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 2.5 sec
 ------------- Standard Output ---------------
 --Output from testConstraints--
 ------------- ---------------- ---------------
@@ -7,4 +7,4 @@ Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 1.773 sec
 --Output from testConstraints--
 ------------- ---------------- ---------------
 
-Testcase: testConstraints took 1.71 sec
+Testcase: testConstraints took 2.41 sec

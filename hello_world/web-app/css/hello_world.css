@@ -1,13 +1,94 @@
 .after-table {
-     text-align: justify;
+    text-align: justify;
     float: bottom;
  }
-.entry {
-    align: left;
+
+.page {
+    align-content: left;
     margin: 5px;
-    padding: 1px;
+    padding-left: 25px;
 }
-input {
+form > div {
     padding: 5px;
     margin: 5px;
+    height: 60px;
+}
+special {
+    text-align: center;
+    padding: 5px;
+    height: 50px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+}
+table tr:nth-child(odd) {
+    background-color: #c2c2ff;
+}
+table tr:nth-child(even) {
+    background-color: #ccccff;
+}
+table th {
+    width: 300px;
+    text-align: center;
+}
+table {
+    padding-bottom: 300px;
+}
+.btn-default {
+    background-color: #daeaf7;
+    opacity: 100;
+}
+body {
+    background-color: #e6e6ff;
+}
+.header-welcome {
+    font-weight: bold;
+    align-self: center; }
+.password-entry {
+    font-style: italic;
+}
+input {
+    background-color: #f3f8fc;
+}
+.logout-btn {
+    position: absolute;
+    top:0;
+    right:0;
+    margin: 15px;
+    font-size: 20px;
+}
+.sq {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.center-block {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.loggin {
+    width: 350px;
+}
+.reg {
+    width: 400px;
+}
+.left-lean {
+    text-align: left;
+}
+.home {
+    width:80%;
+}
+.add-form {
+    border: 2px;
+    margin-right: 65%;
+}
+
+form label {
+    float: left;
 }

@@ -1,52 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="USD1600636" id="0" name="HelloControllerSpec" package="hello_world" tests="19" time="2.58" timestamp="2017-05-24T17:48:50">
+  <testsuite errors="1" failures="2" hostname="USD1600636" id="0" name="HelloControllerSpec" package="hello_world" tests="17" time="4.268" timestamp="2017-05-31T17:37:20">
       <properties />
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test try log in success" time="1.564" />
+      <testcase classname="hello_world.HelloControllerSpec" name="test try log in success" time="2.296" />
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test try log in failure" time="0.045" />
+      <testcase classname="hello_world.HelloControllerSpec" name="test try log in failure" time="0.071" />
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test try register success" time="0.039" />
+      <testcase classname="hello_world.HelloControllerSpec" name="test try register success" time="0.087" />
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test try register failure" time="0.03" />
+      <testcase classname="hello_world.HelloControllerSpec" name="test try register failure" time="0.07" />
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test checkLoggedIn success" time="0.028" />
+      <testcase classname="hello_world.HelloControllerSpec" name="test getData loggedIn empytData" time="0.081" />
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test checkLoggedIn failure" time="0.022" />
+      <testcase classname="hello_world.HelloControllerSpec" name="test getData logged in has data" time="0.121">
+          <error message="Cannot get property &apos;username&apos; on null object" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot get property &apos;username&apos; on null object
+	at hello_world.HelloControllerSpec.test getData logged in has data(HelloControllerSpec.groovy:87)
+</error>
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test getData loggedIn empytData" time="0.417" />
+      </testcase>
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test getData logged in has data" time="0.045" />
+      <testcase classname="hello_world.HelloControllerSpec" name="test getData logged out" time="0.09" />
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test getData logged out" time="0.028" />
+      <testcase classname="hello_world.HelloControllerSpec" name="test tryRegister failure" time="0.229">
+          <failure message="Condition not satisfied:&#xa;&#xa;response.json[&quot;status&quot;] == &quot;Failed to create account.&quot;&#xa;|        |   |          |&#xa;|        |   |          false&#xa;|        |   |          19 differences (24% similarity)&#xa;|        |   |          (Username-) (al)rea(dy) (t)a(ke--)n(-).&#xa;|        |   |          (Failed to) (c-)rea(te) (-)a(ccou)n(t).&#xa;|        |   Username already taken.&#xa;|        [status:Username already taken.]&#xa;org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@2a8dd942&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test tryRegister failure" time="0.025" />
+response.json[&quot;status&quot;] == &quot;Failed to create account.&quot;
+|        |   |          |
+|        |   |          false
+|        |   |          19 differences (24% similarity)
+|        |   |          (Username-) (al)rea(dy) (t)a(ke--)n(-).
+|        |   |          (Failed to) (c-)rea(te) (-)a(ccou)n(t).
+|        |   Username already taken.
+|        [status:Username already taken.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@2a8dd942
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test tryRegister success" time="0.052" />
+	at hello_world.HelloControllerSpec.test tryRegister failure(HelloControllerSpec.groovy:110)
+</failure>
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test logout already logged in" time="0.029" />
+      </testcase>
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test logout not logged in" time="0.025" />
+      <testcase classname="hello_world.HelloControllerSpec" name="test tryRegister success" time="0.233" />
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test addPassword success" time="0.042" />
+      <testcase classname="hello_world.HelloControllerSpec" name="test logout already logged in" time="0.103" />
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test addPassword failure" time="0.037" />
+      <testcase classname="hello_world.HelloControllerSpec" name="test logout not logged in" time="0.057" />
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test editPassword success" time="0.041" />
+      <testcase classname="hello_world.HelloControllerSpec" name="test addPassword success" time="0.108" />
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test editPassword failure" time="0.027" />
+      <testcase classname="hello_world.HelloControllerSpec" name="test addPassword failure" time="0.096">
+          <failure message="Condition not satisfied:&#xa;&#xa;response.json[&quot;status&quot;] == &quot;error: could not add Password Entry.&quot;&#xa;|        |   |          |&#xa;|        |   |          false&#xa;|        |   |          54 differences (37% similarity)&#xa;|        |   |          (E)rror: could not add (p)assword(.) (Check you do )n(o)t( al)r(ead)y( have this account listed above).&#xa;|        |   |          (e)rror: could not add (P)assword(-) (E------------)n(-)t(---)r(---)y(-------------------------------).&#xa;|        |   Error: could not add password. Check you do not already have this account listed above.&#xa;|        [status:Error: could not add password. Check you do not already have this account listed above.]&#xa;org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@37d28938&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test removePassword success" time="0.038" />
+response.json[&quot;status&quot;] == &quot;error: could not add Password Entry.&quot;
+|        |   |          |
+|        |   |          false
+|        |   |          54 differences (37% similarity)
+|        |   |          (E)rror: could not add (p)assword(.) (Check you do )n(o)t( al)r(ead)y( have this account listed above).
+|        |   |          (e)rror: could not add (P)assword(-) (E------------)n(-)t(---)r(---)y(-------------------------------).
+|        |   Error: could not add password. Check you do not already have this account listed above.
+|        [status:Error: could not add password. Check you do not already have this account listed above.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@37d28938
 
-      <testcase classname="hello_world.HelloControllerSpec" name="test removePassword failure" time="0.031" />
+	at hello_world.HelloControllerSpec.test addPassword failure(HelloControllerSpec.groovy:169)
+</failure>
+
+      </testcase>
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test editPassword success" time="0.211" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test editPassword failure" time="0.192" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test removePassword success" time="0.128" />
+
+      <testcase classname="hello_world.HelloControllerSpec" name="test removePassword failure" time="0.07" />
 
       <system-out><![CDATA[--Output from test try log in success--
 --Output from test try log in failure--
 --Output from test try register success--
 --Output from test try register failure--
---Output from test checkLoggedIn success--
---Output from test checkLoggedIn failure--
 --Output from test getData loggedIn empytData--
 --Output from test getData logged in has data--
 --Output from test getData logged out--
@@ -66,8 +97,6 @@
 --Output from test try log in failure--
 --Output from test try register success--
 --Output from test try register failure--
---Output from test checkLoggedIn success--
---Output from test checkLoggedIn failure--
 --Output from test getData loggedIn empytData--
 --Output from test getData logged in has data--
 --Output from test getData logged out--
@@ -84,52 +113,76 @@
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="USD1600636" id="1" name="HelloWorldServiceSpec" package="hello_world" tests="22" time="0.81" timestamp="2017-05-24T17:48:52">
+  <testsuite errors="4" failures="0" hostname="USD1600636" id="1" name="HelloWorldServiceSpec" package="hello_world" tests="22" time="2.33" timestamp="2017-05-31T17:37:24">
       <properties />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount null username" time="0.263" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount null username" time="0.809" />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount null password" time="0.028" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount null password" time="0.068" />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount user already registered" time="0.033" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount user already registered" time="0.065" />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount user not yet registered" time="0.022" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test registerAccount user not yet registered" time="0.049" />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn null username" time="0.028" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn null username" time="0.06" />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn null password" time="0.022" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn null password" time="0.037" />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn user already registered" time="0.023" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn user already registered" time="0.062" />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn user not yet registered" time="0.021" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test tryLogIn user not yet registered" time="0.059" />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null username" time="0.025" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null username" time="0.072">
+          <error message="Some input was null." type="java.lang.Throwable">java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null username(HelloWorldServiceSpec.groovy:113)
+</error>
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null password" time="0.018" />
+      </testcase>
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null accountName" time="0.016" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null password" time="0.06">
+          <error message="Some input was null." type="java.lang.Throwable">java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null password(HelloWorldServiceSpec.groovy:125)
+</error>
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry duplicate accountName" time="0.021" />
+      </testcase>
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry user not yet registered" time="0.021" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry null accountName" time="0.078">
+          <error message="Some input was null." type="java.lang.Throwable">java.lang.Throwable: Some input was null.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:51)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry null accountName(HelloWorldServiceSpec.groovy:137)
+</error>
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry add new password valid" time="0.028" />
+      </testcase>
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null id" time="0.04" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry duplicate accountName" time="0.083" />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null accountName" time="0.045" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry user not yet registered" time="0.09">
+          <error message="User not registered." type="java.lang.Throwable">java.lang.Throwable: User not registered.
+	at hello_world.HelloWorldService.$tt__addPasswordEntry(HelloWorldService.groovy:54)
+	at hello_world.HelloWorldServiceSpec.test addPasswordEntry user not yet registered(HelloWorldServiceSpec.groovy:161)
+</error>
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null password (aka only change accountName)" time="0.025" />
+      </testcase>
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry all valid" time="0.021" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test addPasswordEntry add new password valid" time="0.098" />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry invalid id" time="0.017" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null id" time="0.152" />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry invalid id" time="0.032" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null accountName" time="0.132" />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry valid id" time="0.028" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry null password (aka only change accountName)" time="0.057" />
 
-      <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry try to remove twice" time="0.022" />
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry all valid" time="0.052" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test editPasswordEntry invalid id" time="0.047" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry invalid id" time="0.073" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry valid id" time="0.063" />
+
+      <testcase classname="hello_world.HelloWorldServiceSpec" name="test removePasswordEntry try to remove twice" time="0.048" />
 
       <system-out><![CDATA[--Output from test registerAccount null username--
 --Output from test registerAccount null password--
@@ -180,10 +233,10 @@
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="USD1600636" id="2" name="PersonUnitTests" package="hello_world" tests="1" time="1.773" timestamp="2017-05-24T17:48:48">
+  <testsuite errors="0" failures="0" hostname="USD1600636" id="2" name="PersonUnitTests" package="hello_world" tests="1" time="2.5" timestamp="2017-05-31T17:37:17">
       <properties />
 
-      <testcase classname="hello_world.PersonUnitTests" name="testConstraints" time="1.71" />
+      <testcase classname="hello_world.PersonUnitTests" name="testConstraints" time="2.409" />
 
       <system-out><![CDATA[--Output from testConstraints--
 ]]></system-out>

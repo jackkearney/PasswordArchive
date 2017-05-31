@@ -67,24 +67,6 @@ class HelloControllerSpec extends Specification {
         response.json["status"] != "success"
     }
 
-    void "test checkLoggedIn success" () {
-        when:
-        session["username"] = "test user"
-        controller.checkLoggedIn()
-
-        then:
-        response.json["status"] == "success"
-    }
-
-    void "test checkLoggedIn failure" () {
-        when:
-        session["username"] = null
-        controller.checkLoggedIn()
-
-        then:
-        response.json["status"] != "success"
-    }
-
     void "test getData loggedIn empytData" () {
         when:
         session["username"] = "test user empty"

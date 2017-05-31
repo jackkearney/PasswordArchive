@@ -1,25 +1,31 @@
 package hello_world
 
-import org.codehaus.groovy.grails.validation.routines.UrlValidator
+import org.apache.log4j.Logger
 
 class HelloController {
-    // Define Services
     def HelloWorldService
+    def log = Logger.getLogger(this.getClass())
 
     def index (){
     }
 
     def checkLoggedIn() {
-        def msg = session["username"] ? "success" : "Please log in to view this content."
+        def username = session['username']
         response.setContentType("application/json")
         render(contentType: "application/json") {
-            [status:msg]
+            [username:username]
         }
     }
 
     def getData() {
         def username = session["username"]
-        def passList = PassEntry.findAllByUsername((String) username)
+        def passList
+        try {
+            passList = HelloWorldService.getData(username)
+        } catch (Throwable e) {
+            log.error(e)
+            passList = []
+        }
         response.setContentType("application/json")
         render(contentType: "application/json") {
             [passList:passList,username:username]
@@ -31,17 +37,16 @@ class HelloController {
         def username = req["username"]
         def password = req["password"]
         def result
+        def msg
         try {
             result = helloWorldService.registerAccount(username, password)
-        } catch (RuntimeException e) {
-            println e
-            result = false
-        }
-        def msg = ""
-        if (result) {
-            msg = "success"
-            session["username"] = username
-        } else {
+            if (result) {
+                msg = "success"
+                session["username"] = username
+            } else
+                msg = "Username already taken."
+        } catch (Throwable e) {
+            log.error(e)
             msg = "Failed to create account."
         }
         response.setContentType("application/json")
@@ -55,19 +60,14 @@ class HelloController {
         def msg = ""
         def username = req["username"]
         def password = req["password"]
-        def result
         try {
-            result = helloWorldService.tryLogIn(username, password)
-        } catch (RuntimeException e) {
-            println e
-            result = false
-        }
-        if (result) {
-            msg = "success"
-            session["username"] = username
-        } else {
+            msg = helloWorldService.tryLogIn(username, password)?"success":"Invalid username or password"
+        } catch (Throwable e) {
+            log.error(e)
             msg = "Invalid username or password"
         }
+        if (msg == "success")
+            session["username"] = username
         response.setContentType("application/json")
         render(contentType: "application/json") {
             [status:msg]
@@ -89,18 +89,12 @@ class HelloController {
         def password = req["password"]
         def username = session["username"]
         def url = req["url"]
-        def msg = ""
-        def result
+        def msg
         try {
-            result = HelloWorldService.addPasswordEntry(username, password, accountName, url)
-        } catch (RuntimeException e) {
-            println e
-            result = false
-        }
-        if (result) {
-            msg = "success"
-        } else {
-            msg = "error: could not add Password Entry."
+            msg = HelloWorldService.addPasswordEntry(username, password, accountName, url)?"success":"Error: could not add password. Check you do not already have this account listed above."
+        } catch (Throwable e) {
+            log.error(e)
+            msg = "Error: could not add password."
         }
         response.setContentType("application/json")
         render(contentType: "application/json") {
@@ -115,20 +109,13 @@ class HelloController {
         def newName = req["accountName"]
         def newPass = req["password"]
         def url = req["url"]
-        def result
-        println req
         try {
-            result = HelloWorldService.editPasswordEntry((String) id,(String) newName, (String) newPass,(String) url)
-        } catch (RuntimeException e) {
-            println e
-            result = false
+            msg = HelloWorldService.editPasswordEntry((String) id,(String) newName, (String) newPass,(String) url)?
+                    "success":"error: could not complete save of password"
+        } catch (Throwable e) {
+            log.error(e)
+            msg = "error: could not complete save of password."
         }
-        if (result) {
-            msg = "success"
-        } else {
-            msg = "error: could not complete save of password"
-        }
-        println msg
         response.setContentType("application/json")
         render(contentType: "application/json") {
             [status:msg]
@@ -139,16 +126,10 @@ class HelloController {
         def req = request.JSON
         def msg = ""
         def id = req["id"]
-        def result
         try {
-            result = HelloWorldService.removePasswordEntry(id)
-        } catch (RuntimeException e) {
-            println e
-            result = false
-        }
-        if (result) {
-            msg = "success"
-        } else {
+            msg = HelloWorldService.removePasswordEntry(id)?"success":"error: something went wrong when deleting your entry"
+        } catch (Throwable e) {
+            log.error(e)
             msg = "error: something went wrong when deleting your entry"
         }
         response.setContentType("application/json")
@@ -158,15 +139,14 @@ class HelloController {
     }
 
     def checkValidUrl() {
-        def req = request.JSON
-        def url = req["url"]
-        def msg = ""
+        def msg
         try {
-            UrlValidator urlValidator = new UrlValidator(UrlValidator.ALLOW_ALL_SCHEMES + UrlValidator.ALLOW_2_SLASHES + UrlValidator.NO_FRAGMENTS)
-            msg = urlValidator.isValid(url)?"success":"invalid url"
-        } catch (Exception e) {
-            println e
-            msg = "invalid url"
+            def req = request.JSON
+            def url = req["url"]
+            msg = HelloWorldService.checkUrl(url)?"success":"Please enter a valid url"
+        } catch (Throwable e) {
+            log.error(e)
+            msg = "Please enter a valid url"
         }
         response.setContentType("application/json")
         render(contentType: "application/json") {

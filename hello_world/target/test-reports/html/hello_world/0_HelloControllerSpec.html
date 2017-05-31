@@ -35,15 +35,20 @@
 </nav>
 </div>
 <div class="clear"></div>
-<div class="testsuite success">
+<div class="testsuite error">
 <div class="header">
 <h2>HelloControllerSpec</h2>
 <h3>
                         Executed
-                        19
+                        17
                         tests
                     
-                        without a single error or failure!
+                        with
+                        one error
+
+                        and
+                        2 failures
+                        .
                     </h3>
 </div>
 <div class="testcase clearfix success grid_8 alpha omega" data-name="test try log in success">
@@ -51,7 +56,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test try log in success</b>
 </p>
-<p class="summary">Executed in 1.564 seconds.</p>
+<p class="summary">Executed in 2.296 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -61,7 +66,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test try log in failure</b>
 </p>
-<p class="summary">Executed in 0.045 seconds.</p>
+<p class="summary">Executed in 0.071 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -71,7 +76,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test try register success</b>
 </p>
-<p class="summary">Executed in 0.039 seconds.</p>
+<p class="summary">Executed in 0.087 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -81,27 +86,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test try register failure</b>
 </p>
-<p class="summary">Executed in 0.03 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo"></div>
-<div class="clear"></div>
-</div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="test checkLoggedIn success">
-<div class="grid_3 alpha">
-<p>
-<span class="icon success"></span><b class="testname message success">test checkLoggedIn success</b>
-</p>
-<p class="summary">Executed in 0.028 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo"></div>
-<div class="clear"></div>
-</div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="test checkLoggedIn failure">
-<div class="grid_3 alpha">
-<p>
-<span class="icon success"></span><b class="testname message success">test checkLoggedIn failure</b>
-</p>
-<p class="summary">Executed in 0.022 seconds.</p>
+<p class="summary">Executed in 0.07 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -111,19 +96,28 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test getData loggedIn empytData</b>
 </p>
-<p class="summary">Executed in 0.417 seconds.</p>
+<p class="summary">Executed in 0.081 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="test getData logged in has data">
+<div class="testcase clearfix error grid_8 alpha omega" data-name="test getData logged in has data">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">test getData logged in has data</b>
+<span class="icon error"></span><b class="testname message error">test getData logged in has data</b>
 </p>
-<p class="summary">Executed in 0.045 seconds.</p>
+<p class="summary">Executed in 0.121 seconds.</p>
 </div>
-<div class="grid_5 omega outputinfo"></div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Cannot get property 'username' on null object</b>
+</p>
+<pre>java.lang.NullPointerException: Cannot get property 'username' on null object
+	at hello_world.HelloControllerSpec.test getData logged in has data(HelloControllerSpec.groovy:87)
+</pre>
+</div>
+</div>
 <div class="clear"></div>
 </div>
 <div class="testcase clearfix success grid_8 alpha omega" data-name="test getData logged out">
@@ -131,19 +125,50 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test getData logged out</b>
 </p>
-<p class="summary">Executed in 0.028 seconds.</p>
+<p class="summary">Executed in 0.09 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="test tryRegister failure">
+<div class="testcase clearfix failure grid_8 alpha omega" data-name="test tryRegister failure">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">test tryRegister failure</b>
+<span class="icon failure"></span><b class="testname message failure">test tryRegister failure</b>
 </p>
-<p class="summary">Executed in 0.025 seconds.</p>
+<p class="summary">Executed in 0.229 seconds.</p>
 </div>
-<div class="grid_5 omega outputinfo"></div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Condition not satisfied:
+
+response.json["status"] == "Failed to create account."
+|        |   |          |
+|        |   |          false
+|        |   |          19 differences (24% similarity)
+|        |   |          (Username-) (al)rea(dy) (t)a(ke--)n(-).
+|        |   |          (Failed to) (c-)rea(te) (-)a(ccou)n(t).
+|        |   Username already taken.
+|        [status:Username already taken.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@2a8dd942
+</b>
+</p>
+<pre>junit.framework.AssertionFailedError: Condition not satisfied:
+
+response.json["status"] == "Failed to create account."
+|        |   |          |
+|        |   |          false
+|        |   |          19 differences (24% similarity)
+|        |   |          (Username-) (al)rea(dy) (t)a(ke--)n(-).
+|        |   |          (Failed to) (c-)rea(te) (-)a(ccou)n(t).
+|        |   Username already taken.
+|        [status:Username already taken.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@2a8dd942
+
+	at hello_world.HelloControllerSpec.test tryRegister failure(HelloControllerSpec.groovy:110)
+</pre>
+</div>
+</div>
 <div class="clear"></div>
 </div>
 <div class="testcase clearfix success grid_8 alpha omega" data-name="test tryRegister success">
@@ -151,7 +176,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test tryRegister success</b>
 </p>
-<p class="summary">Executed in 0.052 seconds.</p>
+<p class="summary">Executed in 0.233 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -161,7 +186,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test logout already logged in</b>
 </p>
-<p class="summary">Executed in 0.029 seconds.</p>
+<p class="summary">Executed in 0.103 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -171,7 +196,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test logout not logged in</b>
 </p>
-<p class="summary">Executed in 0.025 seconds.</p>
+<p class="summary">Executed in 0.057 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -181,19 +206,50 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test addPassword success</b>
 </p>
-<p class="summary">Executed in 0.042 seconds.</p>
+<p class="summary">Executed in 0.108 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="test addPassword failure">
+<div class="testcase clearfix failure grid_8 alpha omega" data-name="test addPassword failure">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">test addPassword failure</b>
+<span class="icon failure"></span><b class="testname message failure">test addPassword failure</b>
 </p>
-<p class="summary">Executed in 0.037 seconds.</p>
+<p class="summary">Executed in 0.096 seconds.</p>
 </div>
-<div class="grid_5 omega outputinfo"></div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">Condition not satisfied:
+
+response.json["status"] == "error: could not add Password Entry."
+|        |   |          |
+|        |   |          false
+|        |   |          54 differences (37% similarity)
+|        |   |          (E)rror: could not add (p)assword(.) (Check you do )n(o)t( al)r(ead)y( have this account listed above).
+|        |   |          (e)rror: could not add (P)assword(-) (E------------)n(-)t(---)r(---)y(-------------------------------).
+|        |   Error: could not add password. Check you do not already have this account listed above.
+|        [status:Error: could not add password. Check you do not already have this account listed above.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@37d28938
+</b>
+</p>
+<pre>junit.framework.AssertionFailedError: Condition not satisfied:
+
+response.json["status"] == "error: could not add Password Entry."
+|        |   |          |
+|        |   |          false
+|        |   |          54 differences (37% similarity)
+|        |   |          (E)rror: could not add (p)assword(.) (Check you do )n(o)t( al)r(ead)y( have this account listed above).
+|        |   |          (e)rror: could not add (P)assword(-) (E------------)n(-)t(---)r(---)y(-------------------------------).
+|        |   Error: could not add password. Check you do not already have this account listed above.
+|        [status:Error: could not add password. Check you do not already have this account listed above.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@37d28938
+
+	at hello_world.HelloControllerSpec.test addPassword failure(HelloControllerSpec.groovy:169)
+</pre>
+</div>
+</div>
 <div class="clear"></div>
 </div>
 <div class="testcase clearfix success grid_8 alpha omega" data-name="test editPassword success">
@@ -201,7 +257,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test editPassword success</b>
 </p>
-<p class="summary">Executed in 0.041 seconds.</p>
+<p class="summary">Executed in 0.211 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -211,7 +267,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test editPassword failure</b>
 </p>
-<p class="summary">Executed in 0.027 seconds.</p>
+<p class="summary">Executed in 0.192 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -221,7 +277,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test removePassword success</b>
 </p>
-<p class="summary">Executed in 0.038 seconds.</p>
+<p class="summary">Executed in 0.128 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -231,7 +287,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">test removePassword failure</b>
 </p>
-<p class="summary">Executed in 0.031 seconds.</p>
+<p class="summary">Executed in 0.07 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -243,8 +299,6 @@
 --Output from test try log in failure--
 --Output from test try register success--
 --Output from test try register failure--
---Output from test checkLoggedIn success--
---Output from test checkLoggedIn failure--
 --Output from test getData loggedIn empytData--
 --Output from test getData logged in has data--
 --Output from test getData logged out--
@@ -266,8 +320,6 @@
 --Output from test try log in failure--
 --Output from test try register success--
 --Output from test try register failure--
---Output from test checkLoggedIn success--
---Output from test checkLoggedIn failure--
 --Output from test getData loggedIn empytData--
 --Output from test getData logged in has data--
 --Output from test getData logged out--

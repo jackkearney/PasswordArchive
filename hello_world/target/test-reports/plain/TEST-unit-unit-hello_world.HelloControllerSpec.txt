@@ -1,12 +1,10 @@
 Testsuite: hello_world.HelloControllerSpec
-Tests run: 19, Failures: 0, Errors: 0, Time elapsed: 2.58 sec
+Tests run: 17, Failures: 2, Errors: 1, Time elapsed: 4.268 sec
 ------------- Standard Output ---------------
 --Output from test try log in success--
 --Output from test try log in failure--
 --Output from test try register success--
 --Output from test try register failure--
---Output from test checkLoggedIn success--
---Output from test checkLoggedIn failure--
 --Output from test getData loggedIn empytData--
 --Output from test getData logged in has data--
 --Output from test getData logged out--
@@ -26,8 +24,6 @@ Tests run: 19, Failures: 0, Errors: 0, Time elapsed: 2.58 sec
 --Output from test try log in failure--
 --Output from test try register success--
 --Output from test try register failure--
---Output from test checkLoggedIn success--
---Output from test checkLoggedIn failure--
 --Output from test getData loggedIn empytData--
 --Output from test getData logged in has data--
 --Output from test getData logged out--
@@ -43,22 +39,79 @@ Tests run: 19, Failures: 0, Errors: 0, Time elapsed: 2.58 sec
 --Output from test removePassword failure--
 ------------- ---------------- ---------------
 
-Testcase: test try log in success took 1.564 sec
-Testcase: test try log in failure took 0.045 sec
-Testcase: test try register success took 0.039 sec
-Testcase: test try register failure took 0.03 sec
-Testcase: test checkLoggedIn success took 0.028 sec
-Testcase: test checkLoggedIn failure took 0.022 sec
-Testcase: test getData loggedIn empytData took 0.417 sec
-Testcase: test getData logged in has data took 0.045 sec
-Testcase: test getData logged out took 0.028 sec
-Testcase: test tryRegister failure took 0.025 sec
-Testcase: test tryRegister success took 0.052 sec
-Testcase: test logout already logged in took 0.029 sec
-Testcase: test logout not logged in took 0.025 sec
-Testcase: test addPassword success took 0.042 sec
-Testcase: test addPassword failure took 0.037 sec
-Testcase: test editPassword success took 0.041 sec
-Testcase: test editPassword failure took 0.027 sec
-Testcase: test removePassword success took 0.038 sec
-Testcase: test removePassword failure took 0.031 sec
+Testcase: test try log in success took 2.296 sec
+Testcase: test try log in failure took 0.071 sec
+Testcase: test try register success took 0.087 sec
+Testcase: test try register failure took 0.07 sec
+Testcase: test getData loggedIn empytData took 0.081 sec
+Testcase: test getData logged in has data took 0.117 sec
+	Caused an ERROR
+Cannot get property 'username' on null object
+java.lang.NullPointerException: Cannot get property 'username' on null object
+	at hello_world.HelloControllerSpec.test getData logged in has data(HelloControllerSpec.groovy:87)
+
+Testcase: test getData logged out took 0.09 sec
+Testcase: test tryRegister failure took 0.227 sec
+	FAILED
+Condition not satisfied:
+
+response.json["status"] == "Failed to create account."
+|        |   |          |
+|        |   |          false
+|        |   |          19 differences (24% similarity)
+|        |   |          (Username-) (al)rea(dy) (t)a(ke--)n(-).
+|        |   |          (Failed to) (c-)rea(te) (-)a(ccou)n(t).
+|        |   Username already taken.
+|        [status:Username already taken.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@2a8dd942
+
+junit.framework.AssertionFailedError: Condition not satisfied:
+
+response.json["status"] == "Failed to create account."
+|        |   |          |
+|        |   |          false
+|        |   |          19 differences (24% similarity)
+|        |   |          (Username-) (al)rea(dy) (t)a(ke--)n(-).
+|        |   |          (Failed to) (c-)rea(te) (-)a(ccou)n(t).
+|        |   Username already taken.
+|        [status:Username already taken.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@2a8dd942
+
+	at hello_world.HelloControllerSpec.test tryRegister failure(HelloControllerSpec.groovy:110)
+
+Testcase: test tryRegister success took 0.233 sec
+Testcase: test logout already logged in took 0.103 sec
+Testcase: test logout not logged in took 0.056 sec
+Testcase: test addPassword success took 0.108 sec
+Testcase: test addPassword failure took 0.092 sec
+	FAILED
+Condition not satisfied:
+
+response.json["status"] == "error: could not add Password Entry."
+|        |   |          |
+|        |   |          false
+|        |   |          54 differences (37% similarity)
+|        |   |          (E)rror: could not add (p)assword(.) (Check you do )n(o)t( al)r(ead)y( have this account listed above).
+|        |   |          (e)rror: could not add (P)assword(-) (E------------)n(-)t(---)r(---)y(-------------------------------).
+|        |   Error: could not add password. Check you do not already have this account listed above.
+|        [status:Error: could not add password. Check you do not already have this account listed above.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@37d28938
+
+junit.framework.AssertionFailedError: Condition not satisfied:
+
+response.json["status"] == "error: could not add Password Entry."
+|        |   |          |
+|        |   |          false
+|        |   |          54 differences (37% similarity)
+|        |   |          (E)rror: could not add (p)assword(.) (Check you do )n(o)t( al)r(ead)y( have this account listed above).
+|        |   |          (e)rror: could not add (P)assword(-) (E------------)n(-)t(---)r(---)y(-------------------------------).
+|        |   Error: could not add password. Check you do not already have this account listed above.
+|        [status:Error: could not add password. Check you do not already have this account listed above.]
+org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@37d28938
+
+	at hello_world.HelloControllerSpec.test addPassword failure(HelloControllerSpec.groovy:169)
+
+Testcase: test editPassword success took 0.211 sec
+Testcase: test editPassword failure took 0.192 sec
+Testcase: test removePassword success took 0.128 sec
+Testcase: test removePassword failure took 0.07 sec

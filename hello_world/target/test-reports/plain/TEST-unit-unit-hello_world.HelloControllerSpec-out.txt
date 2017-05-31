@@ -2,8 +2,6 @@
 --Output from test try log in failure--
 --Output from test try register success--
 --Output from test try register failure--
---Output from test checkLoggedIn success--
---Output from test checkLoggedIn failure--
 --Output from test getData loggedIn empytData--
 --Output from test getData logged in has data--
 --Output from test getData logged out--

@@ -1,29 +1,24 @@
-<!DOCTYPE html>
 <html>
-	<head>
-		<h1> Welcome to the Hello, World! Password Manager</h1>
-        <link rel="stylesheet" href="${resource(dir: 'css', file: 'hello_world.css')}" type="text/css">
-    </head>
+<head>
+    <script type="text/javascript">
+        <g:i18n_setup/>
+    </script>
 
-	<body>
-    <g:form url="[controller:'hello',action:'tryLogIn']">
-		<p> Please sign in: </p>
-        Username: <g:textField class="input-field" name="username" value=""/>
-        <br>
-        Password: <g:passwordField class="input-field" name="password" value=""/>
-        <br>
+    <script src='../js/angular.js'></script>
+    <script src='../js/outer.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"> </script>
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'hello_world.css')}" type="text/css">
 
-        <div style="color: #cc0000">
-            ${errmsg}
-        </div>
+</head>
 
-        <g:actionSubmit value="Log in" action="tryLogIn"/>
 
-    </g:form>
-		<p> Don't have an account? </p>
 
-    <g:link action="register">
-        <g:field type="button" name="goto register page" value="register"/>
-    </g:link>
-	</body>
+<body data-ng-app="myApp" data-ng-controller="myCtrl">
+<div class="center-block">
+    <ui-view>
+        <p> Oh no... Where's that page?</p>
+    </ui-view>
+</div>
+</body>
 </html>

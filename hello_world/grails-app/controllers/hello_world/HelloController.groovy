@@ -7,9 +7,25 @@ class HelloController {
     def log = Logger.getLogger(this.getClass())
 
     def index (){
+        println "index hello"
+        if (session['username'])
+            redirect(controller: 'hello', action: 'home')
+        else
+            render(view: '/hello/index')
+    }
+
+    def home() {
+        println "home hello"
+        if (session['username']) {
+            //[username: session['username']]
+            render(view: '/hello/home')
+        } else {
+            redirect(uri: '/hello/index')
+        }
     }
 
     def checkLoggedIn() {
+        println "checkLoggedIn"
         def username = session['username']
         response.setContentType("application/json")
         render(contentType: "application/json") {
@@ -57,30 +73,35 @@ class HelloController {
 
     def tryLogIn() {
         def req = request.JSON
-        def msg = ""
+        def result
         def username = req["username"]
         def password = req["password"]
         try {
-            msg = helloWorldService.tryLogIn(username, password)?"success":"Invalid username or password"
+            result = helloWorldService.tryLogIn(username, password)
         } catch (Throwable e) {
             log.error(e)
-            msg = "Invalid username or password"
         }
-        if (msg == "success")
+        if (result) {
             session["username"] = username
-        response.setContentType("application/json")
-        render(contentType: "application/json") {
-            [status:msg]
+            println "ok redirect from tryLogin"
+            //redirect(uri: '/hello/home')
+            response.setContentType("application/json")
+            render(contentType: "application/json") {
+                [status: "success"]
+            }
+        } else {
+            response.setContentType("application/json")
+            render(contentType: "application/json") {
+                [status: "Invalid username or password"]
+            }
         }
     }
 
     def logout() {
         session["username"] = null
         // maybe use session.invalidate() ?
-        response.setContentType("application/json")
-        render(contentType: "application/json") {
-            [status:"success"]
-        }
+        println "log out"
+        redirect(url: '/hello/index')
     }
 
     def addPassword() {

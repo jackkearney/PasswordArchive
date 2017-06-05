@@ -4,12 +4,6 @@ class UrlMappings {
 
 	static mappings = {
 
-        "/ssb/$controller/$action?/$id?" (parseRequest: true){
-            constraints {
-                // apply constraints here
-            }
-        }
-
         "/$controller/$action?/$id?(.$format)?"{
             constraints {
                 // apply constraints here

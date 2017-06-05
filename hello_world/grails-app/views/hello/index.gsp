@@ -12,7 +12,7 @@
     </script>
 
     <script src='../js/angular.js'></script>
-    <script src='../js/main.js'></script>
+    <script src='../js/outer.js'></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"> </script>
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'hello_world.css')}" type="text/css">

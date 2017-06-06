@@ -13,7 +13,9 @@ class HelloWorldService {
             throw new Throwable("Tried to access data with null username.")
     }
 
-    def registerAccount(String username, String password) {
+    def registerAccount(Object req) {
+        def username = (String) req["username"]
+        def password = (String) req["password"]
         if (checkUsernameTaken(username)) {
             return false
         } else {
@@ -30,23 +32,36 @@ class HelloWorldService {
         return user != null
     }
 
-    def editPasswordEntry(String id_str, String newAccountName, String newPassword, String url) {
+    def editPasswordEntry(Object req) {
+        def newAccountName = (String) req["accountName"]
+        def newPassword = (String) req["password"]
+        def url = (String) req["url"]
 
-        def id = id_str as Long
+        // Edge case where JSON null gets around usual null check.
+        // Need to use .equals to catch it.
+        url = !(url.equals(null)||url.equals("null"))?url:""
+        def urlAlias = !(url.equals(null)||url.equals("null"))?req["urlAlias"]:""
+
+        def id = req["id"] as Long
+
         def passEntry = PassEntry.get(id)
         if (newPassword)
             passEntry.password = newPassword
         if (newAccountName)
             passEntry.accountName = newAccountName
 
-        // Edge case where JSON null gets around usual null check. Need to use .equals to catch it
-        if (url.equals(null) || url.equals("null"))
-            url = ""
         passEntry.url = url
+        passEntry.urlAlias = urlAlias
         return passEntry.save(failOnError: true, flush: true) != null
     }
 
-    def addPasswordEntry(String username, String password, String accountName, String url) {
+    def addPasswordEntry(Object req) {
+        def accountName = (String) req["accountName"]
+        def password = (String) req["password"]
+        def username = (String) req["username"]
+        def url = (String) req["url"]
+        def urlAlias = (String) req["urlAlias"]
+
         if (username == null || password == null || accountName == null)
             throw new Throwable("Some input was null.")
 
@@ -60,13 +75,13 @@ class HelloWorldService {
             return false
 
         // create new post
-        def passEntry = new PassEntry(username: username, password: password, accountName: accountName, url: url)
+        def passEntry = new PassEntry(username: username, password: password,
+                accountName: accountName, url: url, urlAlias: urlAlias)
         return passEntry.save(flush: true) != null
     }
 
-    def removePasswordEntry(int id) {
-
-        id = id as Long
+    def removePasswordEntry(Object req) {
+        def id = req["id"] as Long
         def password = PassEntry.get(id)
         if (password == null)
             return false
@@ -75,15 +90,17 @@ class HelloWorldService {
 
     }
 
-    def tryLogIn(String username, String password) {
+    def tryLogIn(Object req) {
+        def username = (String) req["username"]
+        def password = (String) req["password"]
         def person = Person.findByUsernameAndPassword(username, password)
         return person != null
     }
 
     def checkUrl(String url) {
-        def msg
         try {
-            UrlValidator urlValidator = new UrlValidator(UrlValidator.ALLOW_ALL_SCHEMES + UrlValidator.ALLOW_2_SLASHES + UrlValidator.NO_FRAGMENTS)
+            UrlValidator urlValidator = new UrlValidator(UrlValidator.ALLOW_ALL_SCHEMES +
+                    UrlValidator.ALLOW_2_SLASHES + UrlValidator.NO_FRAGMENTS)
             return urlValidator.isValid(url)
         } catch (Throwable e) {
             log.error(e)

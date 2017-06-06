@@ -21,23 +21,23 @@ special {
     margin-left: auto;
     margin-right: auto;
 }
-table, th , td  {
-    border: 1px solid grey;
-    border-collapse: collapse;
-    padding: 5px;
-}
 table tr:nth-child(odd) {
-    background-color: #c2c2ff;
-}
-table tr:nth-child(even) {
     background-color: #ccccff;
 }
-table th {
-    width: 300px;
-    text-align: center;
+table tr:nth-child(even) {
+    background-color: #dad3ff;
 }
 table {
-    padding-bottom: 300px;
+    //border-left: thin solid #DADADA;
+   // border-right: thin solid #DADADA;
+}
+table th {
+    background-color: #9696E1 !important;
+}
+table button {
+    background-color: #e2edff !important;
+    width: 100px;
+    float: none;
 }
 .btn-default {
     background-color: #daeaf7;
@@ -61,6 +61,10 @@ input {
     right:0;
     margin: 15px;
     font-size: 20px;
+    width: 90px;
+}
+.prof-btn {
+    top:45px !important;
 }
 .sq {
     text-align: center;
@@ -81,14 +85,25 @@ input {
 .left-lean {
     text-align: left;
 }
+.right-lean {
+    text-align: right;
+    float: right;
+
+}
 .home {
     width:80%;
+}
+.profile {
+    width:20%;
+}
+.profile-form {
+    border: 2px;
+    margin-right: auto;
 }
 .add-form {
     border: 2px;
     margin-right: 65%;
 }
-
 form label {
     float: left;
 }

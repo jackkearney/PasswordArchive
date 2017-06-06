@@ -7,29 +7,12 @@ class HelloController {
     def log = Logger.getLogger(this.getClass())
 
     def index (){
-        println "index hello"
-        if (session['username'])
-            redirect(controller: 'hello', action: 'home')
-        else
-            render(view: '/hello/index')
-    }
-
-    def home() {
-        println "home hello"
-        if (session['username']) {
-            //[username: session['username']]
-            render(view: '/hello/home')
-        } else {
-            redirect(uri: '/hello/index')
-        }
     }
 
     def checkLoggedIn() {
-        println "checkLoggedIn"
-        def username = session['username']
         response.setContentType("application/json")
         render(contentType: "application/json") {
-            [username:username]
+            [username:session['username']]
         }
     }
 
@@ -50,17 +33,15 @@ class HelloController {
 
     def tryRegister() {
         def req = request.JSON
-        def username = req["username"]
-        def password = req["password"]
         def result
         def msg
         try {
-            result = helloWorldService.registerAccount(username, password)
+            result = helloWorldService.registerAccount(req)
             if (result) {
                 msg = "success"
                 session["username"] = username
             } else
-                msg = "Username already taken."
+                msg = "Oh, no! That username is already taken."
         } catch (Throwable e) {
             log.error(e)
             msg = "Failed to create account."
@@ -73,46 +54,39 @@ class HelloController {
 
     def tryLogIn() {
         def req = request.JSON
-        def result
-        def username = req["username"]
-        def password = req["password"]
+        def msg
         try {
-            result = helloWorldService.tryLogIn(username, password)
+            msg = helloWorldService.tryLogIn(req)?"success":"Invalid username or password"
         } catch (Throwable e) {
             log.error(e)
+            msg = "Invalid username or password"
         }
-        if (result) {
-            session["username"] = username
-            println "ok redirect from tryLogin"
-            //redirect(uri: '/hello/home')
-            response.setContentType("application/json")
-            render(contentType: "application/json") {
-                [status: "success"]
-            }
-        } else {
-            response.setContentType("application/json")
-            render(contentType: "application/json") {
-                [status: "Invalid username or password"]
-            }
+        if (msg == "success")
+            session["username"] = req['username']
+
+        response.setContentType("application/json")
+        render(contentType: "application/json") {
+            [status: msg]
         }
     }
 
     def logout() {
         session["username"] = null
-        // maybe use session.invalidate() ?
-        println "log out"
-        redirect(url: '/hello/index')
+        response.setContentType("application/json")
+        render(contentType: "application/json") {
+            [status: "success"]
+        }
     }
 
     def addPassword() {
         def req = request.JSON
-        def accountName = req["accountName"]
-        def password = req["password"]
-        def username = session["username"]
-        def url = req["url"]
+        if (!req["username"])
+            req["username"] = session["username"]
+
         def msg
+        def err = "Error: could not add password. Check you do not already have this account listed above."
         try {
-            msg = HelloWorldService.addPasswordEntry(username, password, accountName, url)?"success":"Error: could not add password. Check you do not already have this account listed above."
+            msg = HelloWorldService.addPasswordEntry(req)?"success":err
         } catch (Throwable e) {
             log.error(e)
             msg = "Error: could not add password."
@@ -126,12 +100,8 @@ class HelloController {
     def editPassword() {
         def req = request.JSON
         def msg = ""
-        def id =req["id"]
-        def newName = req["accountName"]
-        def newPass = req["password"]
-        def url = req["url"]
         try {
-            msg = HelloWorldService.editPasswordEntry((String) id,(String) newName, (String) newPass,(String) url)?
+            msg = HelloWorldService.editPasswordEntry(req)?
                     "success":"error: could not complete save of password"
         } catch (Throwable e) {
             log.error(e)
@@ -146,9 +116,8 @@ class HelloController {
     def removePassword() {
         def req = request.JSON
         def msg = ""
-        def id = req["id"]
         try {
-            msg = HelloWorldService.removePasswordEntry(id)?"success":"error: something went wrong when deleting your entry"
+            msg = HelloWorldService.removePasswordEntry(req)?"success":"error: something went wrong when deleting your entry"
         } catch (Throwable e) {
             log.error(e)
             msg = "error: something went wrong when deleting your entry"

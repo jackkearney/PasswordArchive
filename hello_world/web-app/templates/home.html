@@ -1,21 +1,30 @@
 <div class="sq home">
     <h1 class="header-welcome"> Welcome, <span data-ng-bind="username"></span>!</h1>
 
-    <table>
+    <table class="table table-hover sortable">
+        <thead class="thead-inverse">
         <tr>
-            <th> Account </th> <th> Password </th><th> url </th>
+            <th data-ng-click="sortBy('accountName')"> Account </th>
+            <th data-ng-click="sortBy('password')"> Password </th>
+            <th data-ng-click="sortBy('url')"> url </th>
+            <th > </th>
         </tr>
-        <tr data-ng-repeat="entry in passList">
-            <td data-ng-bind="entry.accountName"></td>
-            <td class="password-entry" data-ng-bind="entry.password"></td>
-            <td data-ng-bind="entry.url"></td>
-            <td> <button class="btn btn-default" data-ng-click="editEntry(entry)"> edit </button>  </td>
-            <td> <button class="btn btn-default" data-ng-click="remove()"> remove </button></td>
-        </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="entry in passList" >
+                <td id={{entry.accountName}} data-ng-bind="entry.accountName"></td>
+                <td id={{entry.password}} class="password-entry" data-ng-bind="entry.password"></td>
+                <td data-ng-bind="entry.urlAlias?entry.urlAlias:entry.url" data-ng-click="showPop()"></td>
+                <td>
+                    <button class="btn btn-secondary" data-ng-click="editEntry(entry)"> edit </button>
+                    <button class="btn btn-outline-primary" data-ng-click="remove()"> remove </button>
+                </td>
+            </tr>
+        </tbody>
     </table>
     <br>
     <button class="btn btn-default logout-btn" data-ng-click="logout()"> log out </button>
-    <!--<button class="btn btn-default refresh-btn" data-ng-click="getData()"> refresh </button>-->
+    <button class="btn btn-default logout-btn prof-btn" data-ng-click="profile()"> profile </button>
     <div class="left-lean">
         <button class="btn btn-default add-new-btn" data-ng-click="addEntry()"> Add New Password Entry </button>
 
@@ -32,6 +41,10 @@
             <div>
                 <label>URL:</label>
                 <input class="form-control standard-margin-bottom" placeholder="(optional)" name="url" value="" data-ng-model="edit.url" data-ng-style="urlField" >
+            </div>
+            <div data-ng-show="edit.url.length > 0" data-ng-hide="edit.url.length == 0">
+                <label>Display as:</label>
+                <input class="form-control standard-margin-bottom" placeholder="(optional) Ex: Facebook" name="urlAlias" value="" data-ng-model="edit.urlAlias" data-ng-style="urlField" >
             </div>
             <special >
                 {{error_message}}
@@ -55,7 +68,11 @@
             </div>
             <div>
                 <label>URL:</label>
-                <input class="form-control standard-margin-bottom" placeholder="(optional)" name="url" value="" data-ng-model="new.url" data-ng-style="urlField" >
+                <input class="form-control standard-margin-bottom" placeholder="(optional) Ex: http://facebook.com" name="url" value="" data-ng-model="new.url" data-ng-style="urlField" >
+            </div>
+            <div data-ng-show="new.url.length > 0" data-ng-hide="new.url.length == 0">
+                <label>Display as:</label>
+                <input class="form-control standard-margin-bottom" placeholder="(optional) Ex: Facebook" name="urlAlias" value="" data-ng-model="new.urlAlias" data-ng-style="urlField" >
             </div>
             <special >
                 {{error_message}}

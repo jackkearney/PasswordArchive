@@ -21,23 +21,15 @@ special {
     margin-left: auto;
     margin-right: auto;
 }
-table, th , td  {
-    border: 1px solid grey;
-    border-collapse: collapse;
-    padding: 5px;
-}
 table tr:nth-child(odd) {
-    background-color: #c2c2ff;
-}
-table tr:nth-child(even) {
     background-color: #ccccff;
 }
-table th {
-    width: 300px;
-    text-align: center;
-}
 table {
-    padding-bottom: 300px;
+    //border-left: thin solid #DADADA;
+   // border-right: thin solid #DADADA;
+}
+table th {
+    background-color: #9696E1 !important;
 }
 .btn-default {
     background-color: #daeaf7;

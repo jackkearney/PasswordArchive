@@ -11,6 +11,6 @@ clone or download the repo.
 
 open a terminal/command line window.
 
-run the line: grails run-app
+run the line: 'grails run-app'
 
 open any web browser to http://localhost:8080/hello_world/Hello/index

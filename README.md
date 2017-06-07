@@ -3,19 +3,18 @@ Password Manager web app
 
 Created by Jack Kearney during internship at Ellucian. App intened to be a learning project with focus on AngularJS and Grails. Also used UI-Router on the front end to manage redirection more easily. Runs everything on a local server in your filesystem. 
 
-To run the app:
+## To run the app:
 
-clone or download the repo.
+clone or download the repo. Install grails version 2.5.0 from the dropdown menu at https://grails.org/download.html 
 
-(install grails version 2.5.0)
+open a terminal/command line window and cd to the hello_world directory.
 
-open a terminal/command line window.
+run the line: 
+  `grails run-app`
 
-run the line: 'grails run-app'
+open any web browser to http://localhost:8090/hello_world/Hello/index
 
-open any web browser to http://localhost:8080/hello_world/Hello/index
-
-User Guide:
+## User Guide:
 
 Home Screen:
 View all your accounts and passwords. You have the option to also store a url link to provide easy access. You can display the url or a shorter name. You can not have duplicate accounts with the same name. If you select on the heading for any column it will sort the information. If you select it again it will sort it in reverse order. The logout button is located at the top left along with a link to the profile page.

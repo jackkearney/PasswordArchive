@@ -14,7 +14,20 @@ open a terminal/command line window.
 run the line: 'grails run-app'
 
 open any web browser to http://localhost:8080/hello_world/Hello/index
+
+User Guide:
+
+Home Screen:
+View all your accounts and passwords. You have the option to also store a url link to provide easy access. You can display the url or a shorter name. You can not have duplicate accounts with the same name. If you select on the heading for any column it will sort the information. If you select it again it will sort it in reverse order. The logout button is located at the top left along with a link to the profile page.
+
 ![home screen](https://github.com/jackkearney/PasswordArchive/blob/master/home_screen.png)
+
+Select any entry to view the detailed information and edit any information. Similarly, use the Add New Entry button to create a new account. You can use also the button on the right of each row to delete an account.
+
 ![home screen edit view](https://github.com/jackkearney/PasswordArchive/blob/master/home_screen_edit.png)
+
+Profile screen:
+Visit the profile screen to change your username or password.
+
 ![profile screen](https://github.com/jackkearney/PasswordArchive/blob/master/profile.png)
 

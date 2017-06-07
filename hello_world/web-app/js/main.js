@@ -81,21 +81,23 @@ angular.module("myApp",['ui.router', "ui.bootstrap"])
         $scope.back = function () {
             commonService.back();
         };
-        $scope.profile = function () {
+        $scope.toProfile = function () {
             commonService.profile();
         };
-
-        $scope.saveNewUsername =function (content) {
-            ajaxService.editUsername($scope);
+        $scope.saveNewUsername =function () {
+            ajaxService.saveNewUsername($scope);
         };
         $scope.saveNewPassword =function () {
-            ajaxService.editPassword($scope);
+            ajaxService.saveNewPassword($scope);
         };
         $scope.resetNewUsername = function () {
             commonService.resetUsername(this, $scope);
         };
-        $scope.clearNewPassword = function (x) {
+        $scope.clearNewPassword = function () {
             commonService.clearPassword(this, $scope);
         };
-        $scope.newPassword = "mike";
+        $scope.dismissMsg = function () {
+            commonService.dismissMsg($scope);
+        };
+
     });

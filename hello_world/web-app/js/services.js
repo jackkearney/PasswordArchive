@@ -79,6 +79,7 @@ angular.module("myApp")
                 $scope.passList = [];
                 $scope.edit = null;
                 $scope.new = null;
+                $scope.msg = null;
                 $state.go('signIn');
             });
         };
@@ -96,6 +97,8 @@ angular.module("myApp")
                     var param = $scope.sortedBy;
                     $scope.sortedBy = "";
                     $scope.sortBy(param);
+                    if (!$scope.profile)
+                        $scope.profile = {username:$scope.username, oldPass:'',newPass1:'',newPass2:''};
                 }
             });
         };
@@ -205,63 +208,72 @@ angular.module("myApp")
                 }
             });
         };
-        this.editUsername = function ($scope) {
-            var url = $scope.showAddForm?$scope.new.url:$scope.edit.url;
-            if (url === null || url === "") {
-                $scope.urlField = {'background-color':''};
-                $scope.error_message = "";
-                if (callback)
-                    callback();
+        this.saveNewPassword = function ($scope) {
+            if (!$scope.profile)
                 return;
-            }
-            var JSONObject = {url:url};
+
+            var JSONObject = {oldPassword:$scope.profile.oldPass, newPassword:$scope.profile.newPass1};
             $http({
                 method : "POST",
-                url : "checkValidUrl",
+                url : "saveNewAccountPassword",
                 dataType:'JSON',
                 data:JSON.stringify(JSONObject)
             }).then(function mySuccess(response) {
                 if (response.data.status === "success") {
-                    $scope.urlField = {'background-color':'#bcffcc'};
-                    $scope.error_message = "";
-                    if (callback)
-                        callback();
+                    if (!$scope.msg)
+                        $scope.msg = initMsg();
+                    $scope.msg.password.success = true;
+                    $scope.msg.password.err = false;
+                    $scope.msg.content = "Password was saved successfully!";
                 } else {
-                    $scope.urlField = {'background-color':'#ffbcbc'};
-                    $scope.error_message = "Please enter a valid url";
-                    if (callback)
-                        callback();
+                    if (!$scope.msg)
+                        $scope.msg = initMsg();
+                    $scope.msg.password.success = false;
+                    $scope.msg.password.err = true;
+                    $scope.msg.content = "Password was not saved successfully! " + response.data.status;
                 }
+                $scope.getData();
             });
         };
-        this.editPassword = function ($scope) {
-            var url = $scope.showAddForm?$scope.new.url:$scope.edit.url;
-            if (url === null || url === "") {
-                $scope.urlField = {'background-color':''};
-                $scope.error_message = "";
-                if (callback)
-                    callback();
+        this.saveNewUsername = function ($scope) {
+            if (!$scope.profile)
                 return;
-            }
-            var JSONObject = {url:url};
+            if ($scope.username === $scope.profile.username)
+                return;
+
+            var JSONObject = {newUsername:$scope.profile.username, oldUsername:$scope.username};
             $http({
                 method : "POST",
-                url : "checkValidUrl",
+                url : "saveNewAccountUsername",
                 dataType:'JSON',
                 data:JSON.stringify(JSONObject)
             }).then(function mySuccess(response) {
                 if (response.data.status === "success") {
-                    $scope.urlField = {'background-color':'#bcffcc'};
-                    $scope.error_message = "";
-                    if (callback)
-                        callback();
+                    $scope.username = $scope.profile.username;
+                    if (!$scope.msg)
+                        $scope.msg = initMsg();
+                    $scope.msg.username.success = true;
+                    $scope.msg.username.err = false;
+                    $scope.msg.username.newName = $scope.username;
+                    $scope.msg.content = "Username " + $scope.profile.username + " was saved successfully!";
                 } else {
-                    $scope.urlField = {'background-color':'#ffbcbc'};
-                    $scope.error_message = "Please enter a valid url";
-                    if (callback)
-                        callback();
+                    if (!$scope.msg)
+                        $scope.msg = initMsg();
+                    $scope.msg.username.success = false;
+                    $scope.msg.username.err = true;
+                    $scope.msg.username.newName = $scope.username;
+                    $scope.msg.content = "Username " + $scope.profile.username + " was not saved successfully! " + response.data.status;
                 }
+                $scope.getData();
             });
+        };
+        var initMsg = function () {
+            return {
+                content: "",
+                username: {
+                    success: false, newName: "", err: false
+                }
+            };
         };
     })
 
@@ -326,11 +338,20 @@ angular.module("myApp")
             $state.go('profile');
         };
         this.resetUsername = function (child, $scope) {
-            child.username = $scope.username
+            $scope.profile.username = $scope.username;
         };
-        this.clearPassword = function (child, $scope) {
-            child.$parent.newPassword;
+        this.clearPassword = function ($scope) {
+            $scope.profile.oldPass  = '';
+            $scope.profile.newPass1 = '';
+            $scope.profile.newPass2 = '';
         };
+        this.dismissMsg = function ($scope) {
+            $scope.msg = {
+                username:{success:false,err:false},
+                password:{success:false,err:false}
+            };
+        };
+
     })
 
 

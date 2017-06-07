@@ -9,6 +9,10 @@ class HelloController {
     def index (){
     }
 
+    def red () {
+        redirect(controller: 'hello', action: 'index')
+    }
+
     def checkLoggedIn() {
         response.setContentType("application/json")
         render(contentType: "application/json") {
@@ -39,7 +43,7 @@ class HelloController {
             result = helloWorldService.registerAccount(req)
             if (result) {
                 msg = "success"
-                session["username"] = username
+                session["username"] = req["username"]
             } else
                 msg = "Oh, no! That username is already taken."
         } catch (Throwable e) {
@@ -144,4 +148,36 @@ class HelloController {
         }
     }
 
+    def saveNewAccountUsername () {
+        def req = request.JSON
+        def msg = ""
+        try {
+            msg = HelloWorldService.saveNewAccountUsername(req, session)?"success":" That username is already taken."
+            if (msg == "success")
+                session["username"] = req["newUsername"]
+        } catch (Throwable e) {
+            log.error(e)
+            msg = "error: something went wrong when changing your username."
+        }
+        response.setContentType("application/json")
+        render(contentType: "application/json") {
+            [status:msg]
+        }
+    }
+
+    def saveNewAccountPassword () {
+        def req = request.JSON
+        def msg = ""
+        try {
+            msg = HelloWorldService.saveNewAccountPassword(req, session)?"success":
+                    " The old password is incorrect! Please try again."
+        } catch (Throwable e) {
+            log.error(e)
+            msg = "error: something went wrong when changing your password."
+        }
+        response.setContentType("application/json")
+        render(contentType: "application/json") {
+            [status:msg]
+        }
+    }
 }

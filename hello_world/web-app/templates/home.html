@@ -11,20 +11,21 @@
         </tr>
         </thead>
         <tbody>
-            <tr data-ng-repeat="entry in passList" >
-                <td id={{entry.accountName}} data-ng-bind="entry.accountName"></td>
+            <tr data-ng-repeat="entry in passList" data-ng-click="editEntry(entry)">
+                <td id={{entry.accountName}} data-ng-bind="entry.accountName" ></td>
                 <td id={{entry.password}} class="password-entry" data-ng-bind="entry.password"></td>
-                <td data-ng-bind="entry.urlAlias?entry.urlAlias:entry.url" data-ng-click="showPop()"></td>
+                <td data-ng-bind="entry.urlAlias?entry.urlAlias:entry.url" data-ng-click="entry.url?showPop():''"></td>
                 <td>
-                    <button class="btn btn-secondary" data-ng-click="editEntry(entry)"> edit </button>
-                    <button class="btn btn-outline-primary" data-ng-click="remove()"> remove </button>
+                    <!--<button class="btn btn-secondary" data-ng-click="editEntry(entry)"> edit </button>-->
+                    <button class="btn btn-outline-primary btn-remove" data-ng-click="remove()"> remove </button>
                 </td>
             </tr>
         </tbody>
     </table>
     <br>
     <button class="btn btn-default logout-btn" data-ng-click="logout()"> log out </button>
-    <button class="btn btn-default logout-btn prof-btn" data-ng-click="profile()"> profile </button>
+    <button class="btn btn-default logout-btn prof-btn" data-ng-click="toProfile()"> profile </button>
+
     <div class="left-lean">
         <button class="btn btn-default add-new-btn" data-ng-click="addEntry()"> Add New Password Entry </button>
 

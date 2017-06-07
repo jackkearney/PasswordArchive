@@ -1,41 +1,64 @@
 <div class="sq profile">
-    <button class="btn btn-default logout-btn" data-ng-click="back()"> back </button>
-    <h1 class="header-welcome"> Welcome, <span data-ng-bind="username"></span>!</h1>
-
-    <h1 class="header-welcome"> Your Profile: </h1>
+    <div class="left-lean">
+        <form>
+        <button class="btn btn-default logout-btn" data-ng-click="back()"> back </button>
+        </form>
+        <h1 class="header-welcome"> Your Profile: <span data-ng-bind="msg.username.success?msg.username.newName:username"></span> </h1>
 
         <h3> Change your username </h3>
-        <div>
-            <label>Username:</label>
-            <input class="form-control standard-margin-bottom" placeholder=""   data-ng-bind="username">
-            <span data-ng-bind="username"></span>
+        <form>
+            <div>
+                <label>Username:</label>
+                <input class="form-control standard-margin-bottom" placeholder="(username)"  data-ng-model="profile.username" maxlength="10">
+            </div>
+            <div style="text-align: right">
+                <button style="float: left" class="btn btn-default" data-ng-click="saveNewUsername()" data-ng-disabled="profile.username.length < 4">&#10004; Save</button>
+                <button class="btn btn-default" data-ng-click="resetNewUsername()">&#x21B6; Reset</button>
+            </div>
+        </form>
+        <div class="alert alert-danger alert-dismissable" data-ng-hide="!msg.username.err">
+            <span  class="close" data-ng-click="dismissMsg()" aria-label="close">×</span>
+            <strong>Oh, no!</strong> {{msg.content}}
         </div>
-        <div style="text-align: right">
-            <button style="float: left" class="btn btn-default" data-ng-click="saveNewUsername()" data-ng-disabled="">&#10004; Save</button>
-            <button class="btn btn-default" data-ng-click="resetNewUsername(username)">&#x21B6; Reset</button>
+        <div class="alert alert-success alert-dismissable" data-ng-hide="!msg.username.success">
+            <span class="close" data-ng-click="dismissMsg()" aria-label="close">×</span>
+            <strong>Success!</strong> {{msg.content}}
         </div>
-    <form class="profile-form" name="profileForm2">
-        <h3> Change your password </h3>
-        <div>
-            <label>Old Password:</label>
-            <input class="form-control standard-margin-bottom" placeholder="(required)"   data-ng-bind="username">
-        </div>
-        <div>
-            <label>New Password:</label>
-            <input class="form-control standard-margin-bottom" placeholder="(required)"  data-ng-bind="newPassword">
-        </div>
-        <div>
-            <label>Re-enter New Password:</label>
-            <input class="form-control standard-margin-bottom" placeholder="(required)"  data-ng-bind="newPassword2">
-        </div>
-        <div style="text-align: right">
-            <button style="float: left" class="btn btn-default" data-ng-click="saveNewPassword()" data-ng-disabled="">&#10004; Save</button>
-            <button class="btn btn-default" data-ng-click="clearNewPassword(this)">&#x2718; Clear</button>
-        </div>
-        <div></div>
-        <special>
-            <label> Number of Password Entries:</label>
-            <span data-ng-bind="passList.length"></span>
-        </special>
-    </form>
+        <form class="profile-form" name="profileForm2">
+            <h3> Change your password </h3>
+            <div>
+                <label>Old Password:</label>
+                <input class="form-control standard-margin-bottom" placeholder="(required)"  data-ng-model="profile.oldPass" maxlength="10">
+            </div>
+            <div>
+                <label>New Password:</label>
+                <input class="form-control standard-margin-bottom" placeholder="(required)"  data-ng-model="profile.newPass1" maxlength="10">
+            </div>
+            <div>
+                <label>Re-enter New Password:</label>
+                <input class="form-control standard-margin-bottom" placeholder="(required)"  data-ng-model="profile.newPass2" maxlength="10">
+            </div>
+            <div style="text-align: right">
+                <button style="float: left" class="btn btn-default" data-ng-click="saveNewPassword()"
+                        data-ng-disabled="profile.oldPass.length < 4 || profile.newPass1.length < 4 || profile.newPass2 != profile.newPass1"
+                >&#10004; Save</button>
+                <button class="btn btn-default" data-ng-click="clearNewPassword()">&#x2718; Clear</button>
+            </div>
+            <div class="alert alert-danger alert-dismissable" data-ng-hide="!msg.password.err">
+                <span  class="close" data-ng-click="dismissMsg()" aria-label="close">×</span>
+                <strong>Oh, no!</strong> {{msg.content}}
+            </div>
+            <div class="alert alert-success alert-dismissable" data-ng-hide="!msg.password.success">
+                <span class="close" data-ng-click="dismissMsg()" aria-label="close">×</span>
+                <strong>Success!</strong> {{msg.content}}
+            </div>
+            <special></special>
+            <special>
+                <label> Number of Password Entries:</label>
+                <span data-ng-bind="passList.length"></span>
+            </special>
+
+        </form>
+
+    </div>
 </div>

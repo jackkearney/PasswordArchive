@@ -12,7 +12,7 @@ class UrlMappings {
         // doesn't work.. messes up path to resources?
         "/" {
             controller = "hello"
-            action = "index"
+            action = "red"
         }
         "500"(view:'/error')
 	}

@@ -1,6 +1,7 @@
 package hello_world
 import grails.transaction.Transactional
 import org.codehaus.groovy.grails.validation.routines.UrlValidator
+import org.omg.CORBA.PERSIST_STORE
 
 @Transactional
 class HelloWorldService {
@@ -104,7 +105,54 @@ class HelloWorldService {
             return urlValidator.isValid(url)
         } catch (Throwable e) {
             log.error(e)
-            return false
+            throw e
         }
+    }
+
+    def saveNewAccountUsername(Object req, Object session) {
+        def newName = (String) req["newUsername"]
+        def oldName = (String) req["oldUsername"]
+        def authUsername = (String) session["username"]
+        if (!authUsername)
+            throw new Throwable("Tried to change username when not logged in.")
+        if (oldName != authUsername)
+            throw new Throwable("Tried to change username of different account.")
+        if (newName == oldName)
+            throw new Throwable("New and old username are the same.")
+
+        def user = Person.findByUsername(newName)
+        if (user)
+            return false
+        def oldUser = Person.findByUsername(oldName)
+        if (!oldUser)
+            throw new Throwable("User not found in database (using original username)")
+        oldUser.username = newName
+        if (oldUser.save(flush: true) == null)
+            throw new Throwable("Error: could not complete save of new username")
+        def list = PassEntry.findAllByUsername(oldName)
+
+        list.each {
+            it.username = newName
+            if (it.save(flush: true) == null)
+                throw new Throwable("error whe saving PassEntry with new Username")
+        }
+        return true
+    }
+
+    def saveNewAccountPassword(Object req, Object session) {
+        def newPass = (String) req["newPassword"]
+        def oldPass = (String) req["oldPassword"]
+        def authUsername = (String) session["username"]
+        if (!authUsername)
+            throw new Throwable("Tried to change password when not logged in.")
+        def user = Person.findByUsername(authUsername)
+        if (!user)
+            throw new Throwable("User not found while changing password.")
+        if (user.password != oldPass)
+            return false
+        user.password = newPass
+        if (user.save(flush: true) == null)
+            throw new Throwable("Failed to save user with new password.")
+        return true
     }
 }

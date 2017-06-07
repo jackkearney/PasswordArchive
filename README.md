@@ -14,3 +14,7 @@ open a terminal/command line window.
 run the line: 'grails run-app'
 
 open any web browser to http://localhost:8080/hello_world/Hello/index
+![home screen](https://github.com/jackkearney/PasswordArchive/blob/master/home_screen.png)
+![home screen edit view](https://github.com/jackkearney/PasswordArchive/blob/master/home_screen_edit.png)
+![profile screen](https://github.com/jackkearney/PasswordArchive/blob/master/profile.png)
+
